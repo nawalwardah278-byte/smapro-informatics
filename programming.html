@@ -1,0 +1,3373 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Programming & Robotics Lab | SMAPRO</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f3f6fa;
+    color:#172033;
+    line-height:1.7;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+}
+
+header .robot-icon{
+    font-size:70px;
+    animation:float 2s infinite ease-in-out;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+header h1{
+    margin:10px 0;
+    font-size:34px;
+}
+
+header p{
+    margin:5px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 18px;
+}
+
+.back{
+    display:inline-block;
+    margin-bottom:20px;
+    text-decoration:none;
+    color:#111827;
+    font-weight:bold;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.hero{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero .big{
+    font-size:65px;
+}
+
+.hero h2{
+    font-size:32px;
+    margin:10px;
+}
+
+/* ================= CONCEPT ================= */
+
+.concept{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.concept-box{
+    background:#eef2f7;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.concept-box .emoji{
+    font-size:40px;
+}
+
+/* ================= CODE ================= */
+
+.code{
+    background:#111827;
+    color:#e5e7eb;
+    padding:20px;
+    border-radius:14px;
+    font-family:Consolas,monospace;
+    white-space:pre-wrap;
+    overflow-x:auto;
+}
+
+/* ================= FLOW ================= */
+
+.flow{
+    background:#eef2f7;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    font-size:20px;
+}
+
+.highlight{
+    font-weight:bold;
+}
+
+.warning{
+    background:#fff7ed;
+    padding:18px;
+    border-radius:12px;
+    margin-top:15px;
+}
+
+.success{
+    background:#ecfdf5;
+    padding:18px;
+    border-radius:12px;
+    margin-top:15px;
+}
+
+/* ================= BUTTON ================= */
+
+button{
+    border:none;
+    border-radius:11px;
+    padding:13px 20px;
+    font-size:16px;
+    cursor:pointer;
+    margin:5px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+.primary{
+    background:#111827;
+    color:white;
+}
+
+.secondary{
+    background:#e5e7eb;
+}
+
+/* ================= FORM ================= */
+
+select,
+textarea,
+input{
+    width:100%;
+    max-width:650px;
+    padding:13px;
+    border:2px solid #d1d5db;
+    border-radius:10px;
+    font-size:16px;
+    margin:7px 0;
+}
+
+textarea{
+    min-height:130px;
+}
+
+/* ================= SIMULATOR ================= */
+
+.simulator{
+    background:#f8fafc;
+    border:2px dashed #cbd5e1;
+    border-radius:18px;
+    padding:25px;
+}
+
+.result{
+    margin-top:15px;
+    padding:18px;
+    background:#eef2f7;
+    border-radius:12px;
+}
+
+/* ================= ROBOT TRACK ================= */
+
+.track{
+    position:relative;
+    height:210px;
+    background:#dfe5eb;
+    border-radius:20px;
+    overflow:hidden;
+    margin:20px 0;
+}
+
+.track-line{
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    height:14px;
+    background:#111827;
+}
+
+.robot-car{
+    position:absolute;
+    left:30px;
+    top:calc(50% - 35px);
+    font-size:55px;
+    transition:all 1.4s ease;
+    z-index:3;
+}
+
+.obstacle{
+    position:absolute;
+    right:90px;
+    top:calc(50% - 35px);
+    font-size:55px;
+}
+
+.finish{
+    position:absolute;
+    right:15px;
+    top:0;
+    bottom:0;
+    width:8px;
+    background:#22c55e;
+}
+
+/* ================= LEVEL ================= */
+
+.mission{
+    border-left:6px solid #111827;
+}
+
+.level{
+    background:#f8fafc;
+    border-radius:15px;
+    padding:22px;
+    margin:18px 0;
+}
+
+/* ================= BADGE ================= */
+
+.badge{
+    display:inline-block;
+    background:#e5e7eb;
+    padding:7px 12px;
+    border-radius:20px;
+    margin:3px;
+    font-weight:bold;
+}
+
+/* ================= ROBOT STATUS ================= */
+
+.robot-status{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin:10px;
+}
+
+/* ================= PROGRESS ================= */
+
+.progress{
+    height:15px;
+    background:#e5e7eb;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.5s;
+}
+
+/* ================= FINAL SCORE ================= */
+
+.score{
+    text-align:center;
+    background:#111827;
+    color:white;
+    border-radius:22px;
+    padding:40px 25px;
+    margin-top:30px;
+    margin-bottom:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.final-score{
+    font-size:60px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.final-rank{
+    font-size:24px;
+    margin:15px 0;
+}
+
+.score-message{
+    font-size:17px;
+    font-weight:normal;
+    line-height:1.7;
+    max-width:700px;
+    margin:auto;
+}
+
+/* ================= MATERIAL MAP ================= */
+
+.material-map{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.material-item{
+    background:#f8fafc;
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+    border:2px solid #e5e7eb;
+}
+
+.material-item strong{
+    display:block;
+    margin-top:7px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:35px;
+    color:#64748b;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    header h1{
+        font-size:27px;
+    }
+
+    .concept{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .material-map{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    button{
+        width:100%;
+        margin:5px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- HEADER -->
+<!-- ================================================= -->
+
+<header>
+
+<div class="robot-icon">
+🤖
+</div>
+
+<h1>
+PROGRAMMING & ROBOTICS LAB
+</h1>
+
+<p>
+SMAPRO INFORMATICS LAB
+</p>
+
+<p>
+Dari kode → keputusan → gerakan robot
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<a href="/" class="back">
+← Kembali ke SMAPRO Informatics Lab
+</a>
+
+
+<!-- ================================================= -->
+<!-- HERO -->
+<!-- ================================================= -->
+
+<section class="hero">
+
+<div class="big">
+💻🤖
+</div>
+
+<h2>
+PROGRAMMING → ROBOTICS
+</h2>
+
+<p>
+Kamu bukan hanya belajar coding.
+</p>
+
+<p>
+Kamu akan belajar bagaimana komputer dan robot
+menerima informasi, memprosesnya, mengambil keputusan,
+dan melakukan tindakan.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- LEARNING MAP -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🗺️ PERJALANAN BELAJAR
+</h2>
+
+<p>
+Kita tidak akan langsung membuat robot.
+Kita akan memahami terlebih dahulu bagaimana
+program bekerja.
+</p>
+
+<div class="material-map">
+
+<div class="material-item">
+📚
+<strong>1. Komputer & Program</strong>
+Cara komputer memahami instruksi
+</div>
+
+<div class="material-item">
+🔢
+<strong>2. 0 & 1</strong>
+Bagaimana komputer menyimpan informasi
+</div>
+
+<div class="material-item">
+💻
+<strong>3. Bahasa Pemrograman</strong>
+Python, C++, JavaScript, dan lainnya
+</div>
+
+<div class="material-item">
+📦
+<strong>4. Variabel</strong>
+Menyimpan informasi
+</div>
+
+<div class="material-item">
+🔘
+<strong>5. Boolean</strong>
+TRUE / FALSE
+</div>
+
+<div class="material-item">
+🔀
+<strong>6. IF / ELSE</strong>
+Membuat keputusan
+</div>
+
+<div class="material-item">
+🔁
+<strong>7. LOOP</strong>
+Mengulang instruksi
+</div>
+
+<div class="material-item">
+📡
+<strong>8. SENSOR</strong>
+Robot membaca lingkungan
+</div>
+
+<div class="material-item">
+⚙️
+<strong>9. MOTOR</strong>
+Program menghasilkan gerakan
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISSION BRIEFING -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🎯 MISSION BRIEFING
+</h2>
+
+<p>
+Bayangkan kamu mengikuti lomba robotik.
+Robotmu harus melewati lintasan dengan cepat,
+tetapi robot juga harus tetap berada di jalurnya.
+</p>
+
+<div class="flow">
+
+📡 Sensor
+<br>
+↓
+<br>
+📊 Data
+<br>
+↓
+<br>
+🧠 Program
+<br>
+↓
+<br>
+🔀 Keputusan
+<br>
+↓
+<br>
+⚙️ Motor
+<br>
+↓
+<br>
+🏁 Robot bergerak
+
+</div>
+
+<p class="highlight">
+Pertanyaannya:
+bagaimana komputer bisa melakukan semua itu?
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 1 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🧠 1. APA ITU PROGRAMMING?
+</h2>
+
+<p>
+Programming atau pemrograman adalah proses membuat
+sekumpulan instruksi agar komputer melakukan sesuatu.
+</p>
+
+<p>
+Contohnya sangat sederhana.
+Ketika kita memberikan perintah:
+</p>
+
+<div class="code">
+
+Nyalakan lampu.
+
+</div>
+
+<p>
+Komputer tidak langsung memahami kalimat tersebut
+seperti manusia. Komputer membutuhkan instruksi
+dalam bentuk yang dapat diproses oleh sistemnya.
+</p>
+
+<div class="flow">
+
+👤 MANUSIA
+<br>
+↓
+<br>
+💻 PROGRAM
+<br>
+↓
+<br>
+🤖 KOMPUTER
+<br>
+↓
+<br>
+⚙️ TINDAKAN
+
+</div>
+
+<p class="highlight">
+Jadi programmer sebenarnya adalah orang yang
+memberikan instruksi kepada komputer menggunakan
+bahasa yang dapat dipahami komputer.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 2 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🔢 2. MENGAPA KOMPUTER MENGGUNAKAN 0 DAN 1?
+</h2>
+
+<p>
+Ini bagian yang sangat penting.
+</p>
+
+<p>
+Komputer pada dasarnya bekerja menggunakan
+sinyal elektronik.
+Sistem elektronik lebih mudah membedakan dua kondisi:
+</p>
+
+<div class="concept">
+
+<div class="concept-box">
+
+<div class="emoji">
+🔌
+</div>
+
+<strong>
+0
+</strong>
+
+<br>
+
+Tidak aktif
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+⚡
+</div>
+
+<strong>
+1
+</strong>
+
+<br>
+
+Aktif
+
+</div>
+
+</div>
+
+<p>
+Karena itu komputer menggunakan sistem yang disebut
+<strong>binary</strong> atau bilangan biner.
+</p>
+
+<div class="code">
+
+0 = OFF
+1 = ON
+
+10101001
+11001010
+00101101
+
+</div>
+
+<p>
+Tetapi manusia tentu tidak nyaman jika harus menulis
+semua program menggunakan 0 dan 1.
+</p>
+
+<p class="highlight">
+Karena itulah manusia membuat bahasa pemrograman.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 3 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+💻 3. BAHASA PEMROGRAMAN
+</h2>
+
+<p>
+Bahasa pemrograman dibuat agar manusia dapat
+memberikan instruksi kepada komputer dengan cara
+yang lebih mudah dibaca dan ditulis.
+</p>
+
+<div class="concept">
+
+<div class="concept-box">
+
+<div class="emoji">
+🐍
+</div>
+
+<strong>
+Python
+</strong>
+
+<br>
+
+Mudah dipelajari
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+⚙️
+</div>
+
+<strong>
+C++
+</strong>
+
+<br>
+
+Banyak digunakan
+dalam sistem dan robotik
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+🌐
+</div>
+
+<strong>
+JavaScript
+</strong>
+
+<br>
+
+Banyak digunakan
+untuk web
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+☕
+</div>
+
+<strong>
+Java
+</strong>
+
+<br>
+
+Banyak digunakan
+dalam berbagai sistem
+
+</div>
+
+</div>
+
+<p>
+Bahasa-bahasa tersebut membantu manusia
+menulis instruksi dengan lebih mudah.
+</p>
+
+<div class="flow">
+
+👤 MANUSIA
+<br>
+↓
+<br>
+💻 Bahasa Pemrograman
+<br>
+↓
+<br>
+⚙️ Compiler / Interpreter
+<br>
+↓
+<br>
+🔢 Instruksi yang dapat diproses komputer
+<br>
+↓
+<br>
+🤖 SISTEM BEKERJA
+
+</div>
+
+<p>
+Jadi ketika kamu menulis:
+</p>
+
+<div class="code">
+
+print("Halo")
+
+</div>
+
+<p>
+kamu sebenarnya sedang memberikan instruksi
+kepada komputer menggunakan bahasa pemrograman.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 4 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+📦 4. VARIABEL — TEMPAT MENYIMPAN DATA
+</h2>
+
+<p>
+Program sering membutuhkan tempat untuk menyimpan
+informasi.
+Tempat tersebut disebut variabel.
+</p>
+
+<div class="code">
+
+nama = "Robot"
+umur = 3
+kecepatan = 100
+
+</div>
+
+<p>
+Bayangkan variabel seperti kotak.
+</p>
+
+<div class="concept">
+
+<div class="concept-box">
+
+<div class="emoji">
+📦
+</div>
+
+<strong>
+nama
+</strong>
+
+<br>
+
+"Robot"
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+📦
+</div>
+
+<strong>
+kecepatan
+</strong>
+
+<br>
+
+100
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+📦
+</div>
+
+<strong>
+jarak
+</strong>
+
+<br>
+
+20
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+📦
+</div>
+
+<strong>
+status
+</strong>
+
+<br>
+
+"AMAN"
+
+</div>
+
+</div>
+
+<p class="highlight">
+Variabel = tempat menyimpan informasi
+yang akan digunakan program.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 5 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🔘 5. BOOLEAN — BENAR ATAU SALAH
+</h2>
+
+<p>
+Boolean adalah tipe data yang hanya memiliki
+dua keadaan utama:
+</p>
+
+<div class="concept">
+
+<div class="concept-box">
+
+<div class="emoji">
+✅
+</div>
+
+<strong>
+TRUE
+</strong>
+
+<br>
+
+Benar / Aktif
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+❌
+</div>
+
+<strong>
+FALSE
+</strong>
+
+<br>
+
+Salah / Tidak aktif
+
+</div>
+
+</div>
+
+<p>
+Dalam robotik, Boolean sangat berguna untuk
+menyatakan kondisi sensor.
+</p>
+
+<div class="code">
+
+ada_garis = True
+
+ada_halangan = False
+
+</div>
+
+<p>
+Artinya:
+</p>
+
+<div class="flow">
+
+📡 Sensor
+<br>
+↓
+<br>
+Membaca kondisi
+<br>
+↓
+<br>
+TRUE / FALSE
+<br>
+↓
+<br>
+Program mengambil keputusan
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 6 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🔀 6. IF / ELSE — MEMBUAT KEPUTUSAN
+</h2>
+
+<p>
+Program tidak hanya melakukan perintah.
+Program juga dapat mengambil keputusan.
+</p>
+
+<p>
+Contohnya:
+</p>
+
+<div class="code">
+
+if ada_garis:
+    maju()
+
+else:
+    berhenti()
+
+</div>
+
+<p>
+Artinya:
+</p>
+
+<div class="flow">
+
+ADA GARIS?
+<br><br>
+
+⬇️
+
+<br><br>
+
+YA → 🚗 MAJU
+
+<br><br>
+
+TIDAK → 🛑 BERHENTI
+
+</div>
+
+<p class="highlight">
+Inilah salah satu konsep terpenting dalam robotik:
+program membaca kondisi kemudian memilih tindakan.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 7 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🔁 7. LOOP — MENGULANG PERINTAH
+</h2>
+
+<p>
+Robot biasanya tidak hanya membaca sensor sekali.
+Robot harus membaca sensor berkali-kali selama bergerak.
+</p>
+
+<div class="code">
+
+while True:
+
+    baca_sensor()
+
+    tentukan_keputusan()
+
+    gerakkan_motor()
+
+</div>
+
+<p>
+Prosesnya seperti ini:
+</p>
+
+<div class="flow">
+
+📡 BACA SENSOR
+→
+🧠 PIKIR
+→
+⚙️ GERAK
+→
+📡 BACA LAGI
+→
+🧠 PIKIR LAGI
+→
+⚙️ GERAK LAGI
+→
+🔁 ULANG
+
+</div>
+
+<p>
+Inilah konsep LOOP.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 8 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+📡 8. SENSOR — CARA ROBOT "MENGETAHUI" LINGKUNGAN
+</h2>
+
+<p>
+Robot tidak memiliki mata dan otak seperti manusia.
+Robot menggunakan sensor untuk memperoleh informasi.
+</p>
+
+<div class="concept">
+
+<div class="concept-box">
+
+<div class="emoji">
+👁️
+</div>
+
+<strong>
+Sensor Garis
+</strong>
+
+<br>
+
+Mendeteksi garis
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+📏
+</div>
+
+<strong>
+Sensor Jarak
+</strong>
+
+<br>
+
+Mendeteksi jarak
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+💡
+</div>
+
+<strong>
+Sensor Cahaya
+</strong>
+
+<br>
+
+Mendeteksi cahaya
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+🌡️
+</div>
+
+<strong>
+Sensor Suhu
+</strong>
+
+<br>
+
+Mendeteksi suhu
+
+</div>
+
+</div>
+
+<p class="highlight">
+Sensor memberikan DATA.
+Program mengubah DATA menjadi KEPUTUSAN.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 9 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🤖 9. DARI PROGRAMMING KE ROBOT
+</h2>
+
+<div class="flow">
+
+📡 SENSOR
+<br>
+↓
+<br>
+📊 DATA
+<br>
+↓
+<br>
+💻 PROGRAM
+<br>
+↓
+<br>
+🔀 KEPUTUSAN
+<br>
+↓
+<br>
+⚙️ MOTOR
+<br>
+↓
+<br>
+🚗 GERAKAN ROBOT
+
+</div>
+
+<p>
+Contohnya:
+</p>
+
+<div class="code">
+
+Sensor membaca garis.
+
+Jika ada garis:
+    robot maju.
+
+Jika tidak ada garis:
+    robot mencari garis.
+
+</div>
+
+<p>
+Jadi robot sebenarnya bukan "berpikir" seperti manusia.
+Robot menjalankan aturan yang telah dibuat oleh programmer.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MATERI 10 -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🏁 10. LINE FOLLOWER
+</h2>
+
+<p>
+Sekarang kita masuk ke salah satu contoh robotik
+yang sangat mudah dipahami: line follower.
+</p>
+
+<p>
+Bayangkan robot memiliki dua sensor:
+</p>
+
+<div class="concept">
+
+<div class="concept-box">
+
+<div class="emoji">
+⬅️
+</div>
+
+<strong>
+Sensor Kiri
+</strong>
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+🤖
+</div>
+
+<strong>
+ROBOT
+</strong>
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+➡️
+</div>
+
+<strong>
+Sensor Kanan
+</strong>
+
+</div>
+
+</div>
+
+<h3>
+Logika sederhananya:
+</h3>
+
+<div class="code">
+
+Kiri = garis
+Kanan = tidak ada garis
+→ Koreksi kiri
+
+Kiri = tidak ada garis
+Kanan = garis
+→ Koreksi kanan
+
+Kiri = garis
+Kanan = garis
+→ Maju
+
+Kiri = tidak ada garis
+Kanan = tidak ada garis
+→ Cari garis
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SIMULATOR -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🧪 11. ROBOT DECISION SIMULATOR
+</h2>
+
+<p>
+Sekarang kamu menjadi programmer robot.
+Atur kondisi sensor dan lihat keputusan robot.
+</p>
+
+<div class="simulator">
+
+<label>
+<strong>Sensor Kiri</strong>
+</label>
+
+<select id="leftSensor">
+
+<option value="garis">
+⚫ Melihat garis
+</option>
+
+<option value="tidak">
+⚪ Tidak melihat garis
+</option>
+
+</select>
+
+
+<label>
+<strong>Sensor Kanan</strong>
+</label>
+
+<select id="rightSensor">
+
+<option value="garis">
+⚫ Melihat garis
+</option>
+
+<option value="tidak">
+⚪ Tidak melihat garis
+</option>
+
+</select>
+
+
+<button class="primary" onclick="runSimulator()">
+🤖 JALANKAN PROGRAM
+</button>
+
+
+<div id="simResult" class="result">
+
+Keputusan robot akan muncul di sini.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- ANIMATED ROBOT -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🚗 12. LIHAT KEPUTUSAN ROBOT
+</h2>
+
+<p>
+Perhatikan bagaimana keputusan program
+mempengaruhi gerakan robot.
+</p>
+
+<div class="track">
+
+<div class="track-line"></div>
+
+<div id="robotCar" class="robot-car">
+🚗
+</div>
+
+<div class="obstacle">
+🚧
+</div>
+
+<div class="finish">
+</div>
+
+</div>
+
+<div id="robotStatus" class="robot-status">
+
+Robot siap menjalankan program.
+
+</div>
+
+<button class="primary" onclick="resetRobot()">
+🔄 RESET ROBOT
+</button>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SPEED -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+⚙️ 13. KECEPATAN VS KESTABILAN
+</h2>
+
+<p>
+Dalam lomba robotik, robot yang paling cepat
+belum tentu menjadi pemenang.
+</p>
+
+<div class="concept">
+
+<div class="concept-box">
+
+<div class="emoji">
+🐢
+</div>
+
+<strong>
+Terlalu lambat
+</strong>
+
+<br>
+
+Stabil tetapi lambat
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+💨
+</div>
+
+<strong>
+Terlalu cepat
+</strong>
+
+<br>
+
+Mudah keluar lintasan
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+🎯
+</div>
+
+<strong>
+Optimal
+</strong>
+
+<br>
+
+Cepat + stabil
+
+</div>
+
+</div>
+
+<p class="highlight">
+Tujuan programmer robot bukan sekadar membuat robot bergerak,
+tetapi membuat robot bergerak dengan benar dan stabil.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PWM -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🎛️ 14. MOTOR & PWM
+</h2>
+
+<p>
+Motor adalah bagian yang menghasilkan gerakan.
+Program dapat mengatur seberapa kuat atau cepat motor bekerja,
+tergantung sistem robot yang digunakan.
+</p>
+
+<p>
+Salah satu konsep yang sering digunakan adalah PWM.
+</p>
+
+<div class="code">
+
+motor_kiri = 150
+motor_kanan = 150
+
+</div>
+
+<p>
+Jika kedua motor memiliki nilai yang sama,
+robot cenderung bergerak lurus.
+</p>
+
+<div class="code">
+
+motor_kiri = 100
+motor_kanan = 180
+
+</div>
+
+<p>
+Perbedaan kecepatan motor dapat membuat robot berbelok.
+</p>
+
+<p class="highlight">
+Coding → memengaruhi motor → motor memengaruhi gerakan.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISSION 1 -->
+<!-- ================================================= -->
+
+<section class="card mission">
+
+<h2>
+🏆 MISSION 1 — SENSOR MASTER
+</h2>
+
+<div class="level">
+
+<p>
+Sensor kiri = GARIS
+<br>
+Sensor kanan = TIDAK ADA GARIS
+</p>
+
+<p>
+Apa tindakan robot?
+</p>
+
+<select id="mission1">
+
+<option value="">
+Pilih jawaban
+</option>
+
+<option value="kiri">
+↩️ Koreksi kiri
+</option>
+
+<option value="kanan">
+↪️ Koreksi kanan
+</option>
+
+<option value="maju">
+🚗 Maju
+</option>
+
+<option value="berhenti">
+🛑 Berhenti
+</option>
+
+</select>
+
+<button class="primary" onclick="missionOne()">
+CEK JAWABAN
+</button>
+
+<div id="mission1Result">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISSION 2 -->
+<!-- ================================================= -->
+
+<section class="card mission">
+
+<h2>
+🏆 MISSION 2 — IF / ELSE MASTER
+</h2>
+
+<div class="level">
+
+<div class="code">
+
+IF sensor melihat garis
+→ robot MAJU
+
+ELSE
+→ robot BERHENTI
+
+</div>
+
+<p>
+Sensor sekarang:
+<strong>
+TIDAK MELIHAT GARIS
+</strong>
+</p>
+
+<select id="mission2">
+
+<option value="">
+Pilih tindakan
+</option>
+
+<option value="maju">
+🚗 MAJU
+</option>
+
+<option value="berhenti">
+🛑 BERHENTI
+</option>
+
+</select>
+
+<button class="primary" onclick="missionTwo()">
+CEK JAWABAN
+</button>
+
+<div id="mission2Result">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISSION 3 -->
+<!-- ================================================= -->
+
+<section class="card mission">
+
+<h2>
+🏆 MISSION 3 — PROGRAMMER MUDA
+</h2>
+
+<div class="level">
+
+<p>
+Tuliskan pseudocode untuk kondisi berikut:
+</p>
+
+<p>
+<strong>
+Jika sensor kiri mendeteksi garis,
+robot harus melakukan koreksi ke kiri.
+Jika tidak, robot tetap maju.
+</strong>
+</p>
+
+<textarea
+id="mission3"
+placeholder="Contoh: Jika sensor kiri..."
+></textarea>
+
+<button class="primary" onclick="missionThree()">
+💻 JALANKAN KODE
+</button>
+
+<div id="mission3Result">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISSION 4 -->
+<!-- ================================================= -->
+
+<section class="card mission">
+
+<h2>
+🏆 MISSION 4 — DEBUGGING ENGINEER
+</h2>
+
+<div class="level">
+
+<p>
+Robot bergerak seperti ini:
+</p>
+
+<div class="warning">
+
+🚗💨 Robot terlalu cepat
+<br>
+↪️ Keluar lintasan
+<br>
+❌ Gagal mengikuti garis
+
+</div>
+
+<p>
+Apa yang harus diperiksa terlebih dahulu?
+</p>
+
+<select id="mission4">
+
+<option value="">
+Pilih jawaban
+</option>
+
+<option value="warna">
+Mengubah warna robot
+</option>
+
+<option value="speed">
+Mengatur kecepatan dan logika koreksi
+</option>
+
+<option value="stiker">
+Menambah stiker robot
+</option>
+
+<option value="lampu">
+Menambah lampu
+</option>
+
+</select>
+
+<button class="primary" onclick="missionFour()">
+🔧 DEBUG
+</button>
+
+<div id="mission4Result">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISSION 5 -->
+<!-- ================================================= -->
+
+<section class="card mission">
+
+<h2>
+🏆 MISSION 5 — ROBOT ENGINEER
+</h2>
+
+<div class="level">
+
+<p>
+Sekarang kamu harus membuat aturan untuk robot.
+</p>
+
+<p>
+Buat minimal tiga aturan.
+</p>
+
+<div class="code">
+
+Jika sensor kiri ...
+maka robot ...
+
+Jika sensor kanan ...
+maka robot ...
+
+Jika keduanya ...
+maka robot ...
+
+</div>
+
+<textarea
+id="mission5"
+placeholder="Tuliskan minimal 3 aturan..."
+></textarea>
+
+<button class="primary" onclick="missionFive()">
+🚀 UJI PROGRAM
+</button>
+
+<div id="mission5Result">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISSION 6 -->
+<!-- ================================================= -->
+
+<section class="card mission">
+
+<h2>
+🏆 MISSION 6 — VARIABLE MASTER
+</h2>
+
+<div class="level">
+
+<p>
+Perhatikan program:
+</p>
+
+<div class="code">
+
+kecepatan = 100
+
+</div>
+
+<p>
+Apa fungsi variabel
+<strong>kecepatan</strong>?
+</p>
+
+<select id="mission6">
+
+<option value="">
+Pilih jawaban
+</option>
+
+<option value="menyimpan">
+Menyimpan nilai kecepatan
+</option>
+
+<option value="sensor">
+Membaca sensor
+</option>
+
+<option value="motor">
+Menjadi motor
+</option>
+
+<option value="garis">
+Menjadi garis
+
+</option>
+
+</select>
+
+<button class="primary" onclick="missionSix()">
+CEK JAWABAN
+</button>
+
+<div id="mission6Result">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISSION 7 -->
+<!-- ================================================= -->
+
+<section class="card mission">
+
+<h2>
+🏆 MISSION 7 — BOOLEAN MASTER
+</h2>
+
+<div class="level">
+
+<p>
+Program memiliki data:
+</p>
+
+<div class="code">
+
+ada_halangan = True
+
+</div>
+
+<p>
+Apa arti
+<strong>True</strong>?
+</p>
+
+<select id="mission7">
+
+<option value="">
+Pilih jawaban
+</option>
+
+<option value="ada">
+Ada halangan
+</option>
+
+<option value="tidak">
+Tidak ada halangan
+</option>
+
+<option value="motor">
+Motor rusak
+</option>
+
+<option value="sensor">
+Sensor mati
+</option>
+
+</select>
+
+<button class="primary" onclick="missionSeven()">
+CEK JAWABAN
+</button>
+
+<div id="mission7Result">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISSION 8 -->
+<!-- ================================================= -->
+
+<section class="card mission">
+
+<h2>
+🏆 MISSION 8 — LOOP MASTER
+</h2>
+
+<div class="level">
+
+<p>
+Robot harus terus membaca sensor selama bergerak.
+Konsep programming apa yang paling sesuai?
+</p>
+
+<select id="mission8">
+
+<option value="">
+Pilih jawaban
+</option>
+
+<option value="loop">
+🔁 LOOP
+</option>
+
+<option value="variable">
+📦 VARIABEL
+</option>
+
+<option value="boolean">
+🔘 BOOLEAN
+</option>
+
+<option value="print">
+🖨️ PRINT
+</option>
+
+</select>
+
+<button class="primary" onclick="missionEight()">
+CEK JAWABAN
+</button>
+
+<div id="mission8Result">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MINI COMPETITION -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🏁 MINI ROBOT COMPETITION
+</h2>
+
+<p>
+Sekarang waktunya menguji kemampuanmu.
+Pilih keputusan robot berdasarkan kondisi sensor.
+</p>
+
+
+<div class="level">
+
+<h3>
+Lintasan A
+</h3>
+
+<p>
+Sensor kiri = garis
+<br>
+Sensor kanan = tidak ada garis
+</p>
+
+<button
+class="secondary"
+onclick="raceAnswer('kiri',this,0)"
+>
+↩️ KIRI
+</button>
+
+<button
+class="secondary"
+onclick="raceAnswer('kanan',this,0)"
+>
+↪️ KANAN
+</button>
+
+<button
+class="secondary"
+onclick="raceAnswer('maju',this,0)"
+>
+🚗 MAJU
+</button>
+
+<div id="raceResult0">
+</div>
+
+</div>
+
+
+<div class="level">
+
+<h3>
+Lintasan B
+</h3>
+
+<p>
+Sensor kiri = tidak ada garis
+<br>
+Sensor kanan = garis
+</p>
+
+<button
+class="secondary"
+onclick="raceAnswer('kiri',this,1)"
+>
+↩️ KIRI
+</button>
+
+<button
+class="secondary"
+onclick="raceAnswer('kanan',this,1)"
+>
+↪️ KANAN
+</button>
+
+<button
+class="secondary"
+onclick="raceAnswer('maju',this,1)"
+>
+🚗 MAJU
+</button>
+
+<div id="raceResult1">
+</div>
+
+</div>
+
+
+<div class="level">
+
+<h3>
+Lintasan C
+</h3>
+
+<p>
+Sensor kiri = garis
+<br>
+Sensor kanan = garis
+</p>
+
+<button
+class="secondary"
+onclick="raceAnswer('maju',this,2)"
+>
+🚗 MAJU
+</button>
+
+<button
+class="secondary"
+onclick="raceAnswer('kiri',this,2)"
+>
+↩️ KIRI
+</button>
+
+<button
+class="secondary"
+onclick="raceAnswer('kanan',this,2)"
+>
+↪️ KANAN
+</button>
+
+<div id="raceResult2">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- DEBUGGING -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🐛 DEBUGGING ROBOT
+</h2>
+
+<p>
+Robot tidak selalu langsung berhasil.
+Seorang programmer harus mencari penyebab masalah.
+</p>
+
+<div class="flow">
+
+❌ Robot gagal
+<br>
+↓
+<br>
+🔍 Periksa program
+<br>
+↓
+<br>
+📡 Periksa sensor
+<br>
+↓
+<br>
+⚙️ Periksa motor
+<br>
+↓
+<br>
+🔌 Periksa kabel
+<br>
+↓
+<br>
+🧪 Uji kembali
+
+</div>
+
+<p class="highlight">
+Error bukan musuh programmer.
+Error adalah petunjuk untuk menemukan masalah.
+</p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- REAL ROBOT -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🔗 DARI SIMULATOR KE ROBOT ASLI
+</h2>
+
+<p>
+Apa yang kamu pelajari di halaman ini
+nantinya dapat diterapkan pada berbagai jenis robot.
+</p>
+
+<div class="concept">
+
+<div class="concept-box">
+
+<div class="emoji">
+💻
+</div>
+
+<strong>
+Coding
+</strong>
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+📡
+</div>
+
+<strong>
+Sensor
+</strong>
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+🧠
+</div>
+
+<strong>
+Logika
+</strong>
+
+</div>
+
+
+<div class="concept-box">
+
+<div class="emoji">
+⚙️
+</div>
+
+<strong>
+Motor
+</strong>
+
+</div>
+
+</div>
+
+<p>
+Konsep yang dipelajari tidak hanya berlaku
+untuk satu jenis robot.
+</p>
+
+<p>
+Bisa digunakan untuk:
+</p>
+
+<div class="flow">
+
+🚗 Line Follower
+<br>
+🤖 Robot Avoider
+<br>
+🦾 Robot Arm
+<br>
+🚙 Robot Mobil
+<br>
+🏭 Robot Industri
+<br>
+🌐 IoT
+<br>
+🛠️ Berbagai proyek robotik lainnya
+
+</div>
+
+<div class="success">
+
+<strong>
+INGAT:
+</strong>
+
+<br><br>
+
+Simulator → melatih logika.
+
+<br>
+
+Robot asli → membuktikan logika.
+
+<br><br>
+
+Konsep programming dapat digunakan
+pada banyak jenis robot dan sistem.
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- FINAL MISSION -->
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🚀 FINAL MISSION — MAKE YOUR ROBOT SMART
+</h2>
+
+<p>
+Sekarang hubungkan seluruh materi yang sudah dipelajari.
+</p>
+
+<div class="flow">
+
+🔢 DATA
+<br>
+↓
+<br>
+📦 VARIABEL
+<br>
+↓
+<br>
+🔘 BOOLEAN
+<br>
+↓
+<br>
+🔀 IF / ELSE
+<br>
+↓
+<br>
+🔁 LOOP
+<br>
+↓
+<br>
+📡 SENSOR
+<br>
+↓
+<br>
+🧠 KEPUTUSAN
+<br>
+↓
+<br>
+⚙️ MOTOR
+<br>
+↓
+<br>
+🏁 ROBOT
+
+</div>
+
+<p class="highlight">
+Jika kamu memahami alur ini,
+kamu sudah memahami dasar penting
+programming dan robotik.
+</p>
+
+<button
+class="primary"
+onclick="showFinalScore()"
+>
+🏆 LIHAT HASIL AKHIR
+</button>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- FINAL SCORE -->
+<!-- ================================================= -->
+
+<section
+class="score"
+id="finalScoreSection"
+>
+
+<div>
+🏆 HASIL AKHIR
+</div>
+
+<div class="final-score">
+
+<span id="finalScore">
+0
+</span>
+
+<span>
+/
+</span>
+
+<span>
+100
+</span>
+
+</div>
+
+
+<div class="progress">
+
+<div
+id="finalProgressBar"
+class="progress-bar"
+>
+</div>
+
+</div>
+
+
+<div
+class="final-rank"
+id="finalRank"
+>
+
+🌱 LEVEL: PEMULA
+
+</div>
+
+
+<div
+class="score-message"
+id="scoreMessage"
+>
+
+Klik tombol "LIHAT HASIL AKHIR"
+untuk melihat hasil belajarmu.
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- END -->
+<!-- ================================================= -->
+
+<section
+class="card"
+style="text-align:center;"
+>
+
+<h2>
+🎉 PROGRAMMING & ROBOTICS LAB SELESAI
+</h2>
+
+<p>
+Kamu telah belajar bagaimana komputer,
+program, sensor, keputusan, dan motor
+dapat bekerja menjadi satu sistem.
+</p>
+
+<p class="highlight">
+Sekarang waktunya membuktikan kemampuanmu
+pada robot sungguhan. 🤖🏁
+</p>
+
+<a
+href="/"
+class="primary"
+style="
+display:inline-block;
+text-decoration:none;
+padding:13px 20px;
+border-radius:11px;
+"
+>
+🏠 KEMBALI KE LAB
+</a>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+SMAPRO INFORMATICS LAB
+</strong>
+
+<br>
+
+Learn • Code • Think • Create • Robot
+
+</footer>
+
+
+<script>
+
+/* ================================================= */
+/* SCORE SYSTEM */
+/* ================================================= */
+
+let score = 0;
+
+let correctChallenges = 0;
+
+
+/* ================================================= */
+/* ADD SCORE */
+/* ================================================= */
+
+function addScore(points){
+
+    score += points;
+
+    correctChallenges++;
+
+}
+
+
+/* ================================================= */
+/* SIMULATOR */
+/* ================================================= */
+
+function runSimulator(){
+
+    const left =
+        document.getElementById("leftSensor").value;
+
+    const right =
+        document.getElementById("rightSensor").value;
+
+    const result =
+        document.getElementById("simResult");
+
+    const robot =
+        document.getElementById("robotCar");
+
+    const status =
+        document.getElementById("robotStatus");
+
+
+    if(
+        left === "garis" &&
+        right === "tidak"
+    ){
+
+        result.innerHTML =
+        "↩️ <strong>KEPUTUSAN: KOREKSI KIRI</strong><br><br>" +
+        "Sensor kiri melihat garis. " +
+        "Robot melakukan koreksi ke kiri.";
+
+        robot.style.left = "35%";
+
+        robot.style.top = "35%";
+
+        status.innerHTML =
+        "↩️ Robot melakukan koreksi ke kiri.";
+
+    }
+
+
+    else if(
+        left === "tidak" &&
+        right === "garis"
+    ){
+
+        result.innerHTML =
+        "↪️ <strong>KEPUTUSAN: KOREKSI KANAN</strong><br><br>" +
+        "Sensor kanan melihat garis. " +
+        "Robot melakukan koreksi ke kanan.";
+
+        robot.style.left = "35%";
+
+        robot.style.top = "65%";
+
+        status.innerHTML =
+        "↪️ Robot melakukan koreksi ke kanan.";
+
+    }
+
+
+    else if(
+        left === "garis" &&
+        right === "garis"
+    ){
+
+        result.innerHTML =
+        "🚗 <strong>KEPUTUSAN: MAJU</strong><br><br>" +
+        "Kedua sensor membaca garis. " +
+        "Robot bergerak maju.";
+
+        robot.style.left = "82%";
+
+        robot.style.top =
+        "calc(50% - 35px)";
+
+        status.innerHTML =
+        "🚗💨 ROBOT BERHASIL MENUJU FINISH!";
+
+    }
+
+
+    else{
+
+        result.innerHTML =
+        "🔎 <strong>KEPUTUSAN: CARI GARIS</strong><br><br>" +
+        "Kedua sensor tidak membaca garis.";
+
+        robot.style.left = "15%";
+
+        status.innerHTML =
+        "🔎 Robot sedang mencari garis.";
+
+    }
+
+}
+
+
+/* ================================================= */
+/* RESET ROBOT */
+/* ================================================= */
+
+function resetRobot(){
+
+    const robot =
+        document.getElementById("robotCar");
+
+    robot.style.left = "30px";
+
+    robot.style.top =
+        "calc(50% - 35px)";
+
+    document.getElementById(
+        "robotStatus"
+    ).innerHTML =
+        "Robot siap menjalankan program.";
+
+}
+
+
+/* ================================================= */
+/* MISSION 1 */
+/* ================================================= */
+
+let mission1Done = false;
+
+function missionOne(){
+
+    if(mission1Done) return;
+
+    const answer =
+        document.getElementById("mission1").value;
+
+    const result =
+        document.getElementById("mission1Result");
+
+
+    if(answer === "kiri"){
+
+        mission1Done = true;
+
+        addScore(10);
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎉 BENAR! Sensor kiri mendeteksi garis, ' +
+        'sehingga robot melakukan koreksi ke kiri.' +
+        '<br>⭐ +10 poin' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '❌ Belum tepat. Perhatikan sensor mana ' +
+        'yang mendeteksi garis.' +
+        '</div>';
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MISSION 2 */
+/* ================================================= */
+
+let mission2Done = false;
+
+function missionTwo(){
+
+    if(mission2Done) return;
+
+    const answer =
+        document.getElementById("mission2").value;
+
+    const result =
+        document.getElementById("mission2Result");
+
+
+    if(answer === "berhenti"){
+
+        mission2Done = true;
+
+        addScore(10);
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎉 BENAR! Karena kondisi FALSE, ' +
+        'program masuk ke ELSE.' +
+        '<br>⭐ +10 poin' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '❌ Salah. Ingat aturan IF / ELSE.' +
+        '</div>';
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MISSION 3 */
+/* ================================================= */
+
+let mission3Done = false;
+
+function missionThree(){
+
+    if(mission3Done) return;
+
+    const answer =
+        document
+        .getElementById("mission3")
+        .value
+        .toLowerCase();
+
+    const result =
+        document.getElementById("mission3Result");
+
+
+    if(
+
+        answer.length >= 20 &&
+
+        answer.includes("sensor") &&
+
+        (
+            answer.includes("jika") ||
+            answer.includes("if")
+        ) &&
+
+        answer.includes("kiri")
+
+    ){
+
+        mission3Done = true;
+
+        addScore(15);
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎉 PROGRAM DITERIMA!' +
+        '<br><br>' +
+        'Kamu sudah memahami pola:' +
+        '<br>' +
+        'Sensor → Kondisi → Keputusan.' +
+        '<br>⭐ +15 poin' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '💡 Coba gunakan pola:' +
+        '<br><strong>' +
+        'Jika sensor kiri ..., maka robot ...' +
+        '</strong>' +
+        '</div>';
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MISSION 4 */
+/* ================================================= */
+
+let mission4Done = false;
+
+function missionFour(){
+
+    if(mission4Done) return;
+
+    const answer =
+        document.getElementById("mission4").value;
+
+    const result =
+        document.getElementById("mission4Result");
+
+
+    if(answer === "speed"){
+
+        mission4Done = true;
+
+        addScore(15);
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🔧 DEBUG BERHASIL!' +
+        '<br><br>' +
+        'Periksa kecepatan dan logika koreksi.' +
+        '<br>⭐ +15 poin' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '❌ Itu bukan penyebab utama robot ' +
+        'keluar lintasan.' +
+        '</div>';
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MISSION 5 */
+/* ================================================= */
+
+let mission5Done = false;
+
+function missionFive(){
+
+    if(mission5Done) return;
+
+    const answer =
+        document
+        .getElementById("mission5")
+        .value
+        .toLowerCase();
+
+    const result =
+        document.getElementById("mission5Result");
+
+    let rules = 0;
+
+
+    if(answer.includes("sensor"))
+        rules++;
+
+    if(
+        answer.includes("jika") ||
+        answer.includes("if")
+    )
+        rules++;
+
+    if(answer.includes("kiri"))
+        rules++;
+
+    if(answer.includes("kanan"))
+        rules++;
+
+    if(answer.includes("maju"))
+        rules++;
+
+    if(
+        answer.includes("belok") ||
+        answer.includes("koreksi")
+    )
+        rules++;
+
+
+    if(rules >= 4){
+
+        mission5Done = true;
+
+        addScore(15);
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🚀 PROGRAM BERHASIL DIUJI!' +
+        '<br><br>' +
+        'Kamu sudah mampu menghubungkan ' +
+        'sensor, kondisi, dan tindakan robot.' +
+        '<br>⭐ +15 poin' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '💡 Buat minimal 3 aturan yang melibatkan ' +
+        'sensor dan tindakan robot.' +
+        '</div>';
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MISSION 6 */
+/* ================================================= */
+
+let mission6Done = false;
+
+function missionSix(){
+
+    if(mission6Done) return;
+
+    const answer =
+        document.getElementById("mission6").value;
+
+    const result =
+        document.getElementById("mission6Result");
+
+
+    if(answer === "menyimpan"){
+
+        mission6Done = true;
+
+        addScore(10);
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎉 BENAR! Variabel kecepatan digunakan ' +
+        'untuk menyimpan nilai 100.' +
+        '<br>⭐ +10 poin' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '❌ Ingat: variabel adalah tempat ' +
+        'untuk menyimpan data.' +
+        '</div>';
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MISSION 7 */
+/* ================================================= */
+
+let mission7Done = false;
+
+function missionSeven(){
+
+    if(mission7Done) return;
+
+    const answer =
+        document.getElementById("mission7").value;
+
+    const result =
+        document.getElementById("mission7Result");
+
+
+    if(answer === "ada"){
+
+        mission7Done = true;
+
+        addScore(10);
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎉 BENAR! True berarti kondisi tersebut benar. ' +
+        'Dalam contoh ini berarti ada halangan.' +
+        '<br>⭐ +10 poin' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '❌ Salah. True berarti kondisi bernilai benar.' +
+        '</div>';
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MISSION 8 */
+/* ================================================= */
+
+let mission8Done = false;
+
+function missionEight(){
+
+    if(mission8Done) return;
+
+    const answer =
+        document.getElementById("mission8").value;
+
+    const result =
+        document.getElementById("mission8Result");
+
+
+    if(answer === "loop"){
+
+        mission8Done = true;
+
+        addScore(10);
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎉 BENAR! LOOP membuat robot dapat ' +
+        'mengulang proses membaca sensor.' +
+        '<br>⭐ +10 poin' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '❌ Ingat, proses yang harus dilakukan ' +
+        'berulang menggunakan LOOP.' +
+        '</div>';
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MINI RACE */
+/* ================================================= */
+
+let raceDone = [false,false,false];
+
+function raceAnswer(answer,button,index){
+
+    if(raceDone[index]) return;
+
+
+    const correctAnswers = [
+
+        "kiri",
+        "kanan",
+        "maju"
+
+    ];
+
+
+    const correct =
+        correctAnswers[index];
+
+
+    const result =
+        document.getElementById(
+            "raceResult" + index
+        );
+
+
+    if(answer === correct){
+
+        raceDone[index] = true;
+
+        addScore(5);
+
+        button.innerHTML =
+        "✅ BENAR!";
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎉 Keputusan tepat!' +
+        '<br>⭐ +5 poin' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '❌ Belum tepat. Baca kembali kondisi sensor.' +
+        '</div>';
+
+    }
+
+}
+
+
+/* ================================================= */
+/* FINAL SCORE */
+/* ================================================= */
+
+function showFinalScore(){
+
+    const finalScore =
+        document.getElementById("finalScore");
+
+    const finalProgress =
+        document.getElementById(
+            "finalProgressBar"
+        );
+
+    const finalRank =
+        document.getElementById("finalRank");
+
+    const message =
+        document.getElementById("scoreMessage");
+
+
+    /*
+       Nilai maksimal sebenarnya:
+
+       Mission 1 = 10
+       Mission 2 = 10
+       Mission 3 = 15
+       Mission 4 = 15
+       Mission 5 = 15
+       Mission 6 = 10
+       Mission 7 = 10
+       Mission 8 = 10
+       Race       = 15
+
+       Total = 110
+
+       Kemudian dikonversi menjadi 100.
+    */
+
+
+    let finalValue =
+        Math.round((score / 110) * 100);
+
+
+    if(finalValue > 100)
+        finalValue = 100;
+
+
+    finalScore.innerText =
+        finalValue;
+
+
+    finalProgress.style.width =
+        finalValue + "%";
+
+
+    if(finalValue >= 90){
+
+        finalRank.innerHTML =
+        "🏆 LEVEL: ROBOTIC ENGINEER";
+
+        message.innerHTML =
+        "LUAR BIASA! Kamu sudah mampu " +
+        "menghubungkan programming, logika, " +
+        "sensor, keputusan, dan gerakan robot." +
+        "<br><br>" +
+        "🤖 Kamu siap masuk ke tahap " +
+        "pemrograman robot sungguhan!";
+
+    }
+
+    else if(finalValue >= 75){
+
+        finalRank.innerHTML =
+        "🥇 LEVEL: PROGRAMMER";
+
+        message.innerHTML =
+        "Hebat! Kamu sudah memahami dasar " +
+        "programming dan bagaimana program " +
+        "dapat membuat robot mengambil keputusan." +
+        "<br><br>" +
+        "Terus latihan agar semakin siap " +
+        "menghadapi robot sungguhan.";
+
+    }
+
+    else if(finalValue >= 50){
+
+        finalRank.innerHTML =
+        "🥈 LEVEL: ROBOT BUILDER";
+
+        message.innerHTML =
+        "Bagus! Dasar programming dan robotic " +
+        "kamu sudah mulai terbentuk." +
+        "<br><br>" +
+        "Coba pelajari kembali beberapa materi " +
+        "dan ulangi tantangan.";
+
+    }
+
+    else{
+
+        finalRank.innerHTML =
+        "🌱 LEVEL: PEMULA";
+
+        message.innerHTML =
+        "Tidak masalah jika belum mendapatkan " +
+        "nilai tinggi." +
+        "<br><br>" +
+        "Programmer belajar melalui percobaan, " +
+        "kesalahan, dan perbaikan." +
+        "<br><br>" +
+        "Coba pelajari kembali materi kemudian " +
+        "uji lagi kemampuanmu.";
+
+    }
+
+
+    document
+    .getElementById("finalScoreSection")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>

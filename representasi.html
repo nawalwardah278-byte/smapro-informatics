@@ -1,0 +1,851 @@
+'''text'
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Representasi Data - SMAPRO Informatics Lab</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        .lesson {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .lesson-header {
+            background: #111827;
+            color: white;
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .lesson-header .big-icon {
+            font-size: 60px;
+        }
+
+        .lesson-header h2 {
+            margin: 15px 0 10px;
+        }
+
+        .lesson-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .lesson-card h2 {
+            margin-bottom: 15px;
+        }
+
+        .lesson-card p {
+            margin-bottom: 12px;
+        }
+
+        .example {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 17px;
+        }
+
+        .simulator {
+            text-align: center;
+        }
+
+        .simulator input {
+            width: 100%;
+            max-width: 350px;
+            padding: 14px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .simulator button {
+            margin: 5px;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f1f5f9;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .challenge {
+            border-left: 6px solid #111827;
+        }
+
+        .challenge-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #111827;
+            font-weight: bold;
+        }
+
+        .ascii-lab {
+            text-align: center;
+        }
+
+        .ascii-lab input {
+            width: 100%;
+            max-width: 500px;
+            padding: 14px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .ascii-result {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .ascii-item {
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-family: monospace;
+        }
+
+        .home-button {
+            display: inline-block;
+            background: #111827;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+
+            .lesson {
+                padding: 20px 12px;
+            }
+
+            .lesson-card {
+                padding: 22px;
+            }
+
+            .lesson-header {
+                padding: 30px 18px;
+            }
+
+            .lesson-header h2 {
+                font-size: 22px;
+            }
+
+            .simulator button {
+                width: 100%;
+                margin: 6px 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        🔢
+    </div>
+
+    <h1>
+        REPRESENTASI DATA
+    </h1>
+
+    <p>
+        SMAPRO Informatics Lab
+    </p>
+
+</header>
+
+
+
+<main class="lesson">
+
+
+    <a href="/" class="back-button">
+        ← Kembali ke Laboratorium
+    </a>
+
+
+
+    <!-- INTRO -->
+
+    <section class="lesson-header">
+
+        <div class="big-icon">
+            🔢
+        </div>
+
+        <h2>
+            Bagaimana Komputer Memahami Data?
+        </h2>
+
+        <p>
+            Mari kita belajar bagaimana angka,
+            huruf, gambar, dan suara dapat
+            direpresentasikan oleh komputer.
+        </p>
+
+    </section>
+
+
+
+    <!-- MATERI -->
+
+    <section class="lesson-card">
+
+        <h2>
+            📖 1. Apa Itu Representasi Data?
+        </h2>
+
+        <p>
+            Representasi data adalah cara komputer
+            menyimpan dan menyajikan informasi
+            dalam bentuk yang dapat diproses.
+        </p>
+
+        <p>
+            Manusia dapat memahami teks, angka,
+            gambar, suara, dan video.
+            Komputer perlu mengubah informasi
+            tersebut menjadi bentuk digital.
+        </p>
+
+        <div class="example">
+
+            Komputer bekerja dengan data digital.
+
+            <br><br>
+
+            Data → Representasi → Diproses Komputer
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BIT -->
+
+    <section class="lesson-card">
+
+        <h2>
+            💡 2. Bit dan Biner
+        </h2>
+
+        <p>
+            Pada tingkat dasar, komputer menggunakan
+            dua keadaan untuk merepresentasikan
+            informasi digital.
+        </p>
+
+        <div class="example">
+
+            0 = OFF
+
+            <br>
+
+            1 = ON
+
+        </div>
+
+        <p>
+            Satu digit 0 atau 1 disebut
+            <strong>bit</strong>.
+        </p>
+
+        <p>
+            Delapan bit disebut
+            <strong>1 byte</strong>.
+        </p>
+
+    </section>
+
+
+
+    <!-- BINER -->
+
+    <section class="lesson-card">
+
+        <h2>
+            🔢 3. Sistem Bilangan Biner
+        </h2>
+
+        <p>
+            Biner adalah sistem bilangan berbasis 2.
+            Biner hanya menggunakan angka:
+        </p>
+
+        <div class="example">
+
+            0 dan 1
+
+        </div>
+
+        <p>
+            Contoh:
+        </p>
+
+        <div class="example">
+
+            5 desimal = 101 biner
+
+            <br><br>
+
+            10 desimal = 1010 biner
+
+            <br><br>
+
+            25 desimal = 11001 biner
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SIMULATOR -->
+
+    <section class="lesson-card simulator">
+
+        <h2>
+            🧪 4. Biner Lab
+        </h2>
+
+        <p>
+            Masukkan angka desimal.
+            Kemudian lihat representasi binernya.
+        </p>
+
+        <input
+            type="number"
+            id="decimalInput"
+            placeholder="Contoh: 25"
+            min="0">
+
+        <br>
+
+        <button onclick="convertBinary()">
+            🔄 Ubah ke Biner
+        </button>
+
+        <button onclick="analyzeData()">
+            🧪 Analisis Data
+        </button>
+
+
+        <div
+            class="result"
+            id="binaryResult">
+
+            Hasil biner akan muncul di sini.
+
+        </div>
+
+
+        <div
+            class="result"
+            id="analysisResult">
+
+            Analisis data akan muncul di sini.
+
+        </div>
+
+    </section>
+
+
+
+    <!-- HEX -->
+
+    <section class="lesson-card">
+
+        <h2>
+            🔶 5. Heksadesimal
+        </h2>
+
+        <p>
+            Selain desimal dan biner,
+            komputer juga sering menggunakan
+            sistem bilangan heksadesimal.
+        </p>
+
+        <p>
+            Heksadesimal menggunakan 16 simbol:
+        </p>
+
+        <div class="example">
+
+            0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+        </div>
+
+        <p>
+            Contoh:
+        </p>
+
+        <div class="example">
+
+            25 desimal = 19 heksadesimal
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ASCII -->
+
+    <section class="lesson-card ascii-lab">
+
+        <h2>
+            🔤 6. Text → ASCII → Binary
+        </h2>
+
+        <p>
+            Komputer juga perlu menyimpan huruf.
+            Salah satu standar yang digunakan
+            adalah ASCII.
+        </p>
+
+        <div class="example">
+
+            A = 65
+
+            <br>
+
+            B = 66
+
+            <br>
+
+            C = 67
+
+        </div>
+
+        <p>
+            Sekarang coba masukkan kata sendiri!
+        </p>
+
+        <input
+            type="text"
+            id="textInput"
+            placeholder="Contoh: SMAPRO">
+
+        <br>
+
+        <button onclick="convertText()">
+            🔤 Analisis Teks
+        </button>
+
+        <div
+            class="ascii-result"
+            id="asciiResult">
+
+            Hasil ASCII akan muncul di sini.
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TANTANGAN -->
+
+    <section class="lesson-card challenge">
+
+        <h2>
+            🏆 7. Tantangan Praktik
+        </h2>
+
+        <p>
+            Sekarang waktunya kamu mencoba
+            tanpa bantuan simulator.
+        </p>
+
+
+        <div class="challenge-box">
+
+            <strong>
+                Tantangan 1
+            </strong>
+
+            <p>
+                Ubah angka berikut ke biner:
+            </p>
+
+            <p>
+                7 &nbsp;&nbsp; 12 &nbsp;&nbsp; 20 &nbsp;&nbsp; 31
+            </p>
+
+        </div>
+
+
+        <div class="challenge-box">
+
+            <strong>
+                Tantangan 2
+            </strong>
+
+            <p>
+                Cari nilai ASCII dari:
+            </p>
+
+            <p>
+                A &nbsp;&nbsp; M &nbsp;&nbsp; Z
+            </p>
+
+        </div>
+
+
+        <div class="challenge-box">
+
+            <strong>
+                Tantangan 3
+            </strong>
+
+            <p>
+                Jelaskan dengan bahasamu sendiri:
+            </p>
+
+            <p>
+                Mengapa komputer menggunakan
+                representasi 0 dan 1?
+            </p>
+
+        </div>
+
+
+        <div class="challenge-box">
+
+            <strong>
+                Tantangan 4 ⭐
+            </strong>
+
+            <p>
+                Ketik kata "SMAPRO" pada Text Lab.
+            </p>
+
+            <p>
+                Catat nilai ASCII setiap hurufnya.
+            </p>
+
+            <p>
+                Kemudian jelaskan bagaimana
+                huruf tersebut dapat berubah
+                menjadi data digital.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- REFLECTION -->
+
+    <section class="lesson-card">
+
+        <h2>
+            🧠 Pikirkan!
+        </h2>
+
+        <p>
+            Kalau sebuah foto memiliki jutaan pixel,
+            bagaimana komputer menyimpan informasi
+            tentang warna setiap pixel?
+        </p>
+
+        <p>
+            Apakah gambar juga pada akhirnya
+            dapat direpresentasikan menggunakan
+            data digital?
+        </p>
+
+    </section>
+
+
+
+    <section class="lesson-card"
+             style="text-align:center;">
+
+        <h2>
+            🎉 Selesai!
+        </h2>
+
+        <p>
+            Kamu sudah mempelajari dasar
+            representasi data.
+        </p>
+
+        <a
+            href="/"
+            class="home-button">
+
+            🏠 Kembali ke SMAPRO Lab
+
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        SMAPRO INFORMATICS LAB
+    </p>
+
+    <p>
+        Learn • Explore • Create
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   DESIMAL → BINER
+========================= */
+
+function convertBinary() {
+
+    const input =
+        document.getElementById("decimalInput").value;
+
+    const result =
+        document.getElementById("binaryResult");
+
+
+    if (input === "") {
+
+        result.innerHTML =
+            "⚠️ Masukkan angka terlebih dahulu.";
+
+        return;
+
+    }
+
+
+    const number =
+        parseInt(input);
+
+
+    if (number < 0) {
+
+        result.innerHTML =
+            "⚠️ Masukkan angka 0 atau lebih.";
+
+        return;
+
+    }
+
+
+    const binary =
+        number.toString(2);
+
+
+    result.innerHTML =
+        "🔢 " +
+        number +
+        "₁₀ = " +
+        binary +
+        "₂";
+
+}
+
+
+
+/* =========================
+   ANALISIS DATA
+========================= */
+
+function analyzeData() {
+
+    const input =
+        document.getElementById("decimalInput").value;
+
+    const result =
+        document.getElementById("analysisResult");
+
+
+    if (input === "") {
+
+        result.innerHTML =
+            "⚠️ Masukkan angka terlebih dahulu.";
+
+        return;
+
+    }
+
+
+    const number =
+        parseInt(input);
+
+
+    if (number < 0) {
+
+        result.innerHTML =
+            "⚠️ Masukkan angka 0 atau lebih.";
+
+        return;
+
+    }
+
+
+    const binary =
+        number.toString(2);
+
+
+    const hexadecimal =
+        number.toString(16).toUpperCase();
+
+
+    const bits =
+        binary.length;
+
+
+    result.innerHTML =
+
+        "📊 ANALISIS DATA" +
+
+        "<br><br>" +
+
+        "Desimal : " +
+        number +
+
+        "<br>" +
+
+        "Biner : " +
+        binary +
+
+        "<br>" +
+
+        "Heksadesimal : " +
+        hexadecimal +
+
+        "<br>" +
+
+        "Jumlah bit : " +
+        bits;
+
+}
+
+
+
+/* =========================
+   TEXT → ASCII → BINARY
+========================= */
+
+function convertText() {
+
+    const text =
+        document.getElementById("textInput").value;
+
+    const result =
+        document.getElementById("asciiResult");
+
+
+    if (text === "") {
+
+        result.innerHTML =
+            "⚠️ Masukkan teks terlebih dahulu.";
+
+        return;
+
+    }
+
+
+    let output = "";
+
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+        const character =
+            text[i];
+
+        const ascii =
+            character.charCodeAt(0);
+
+        const binary =
+            ascii.toString(2).padStart(8, "0");
+
+
+        output +=
+
+            '<div class="ascii-item">' +
+
+            "<strong>" +
+            character +
+            "</strong>" +
+
+            " → ASCII: " +
+            ascii +
+
+            " → Binary: " +
+            binary +
+
+            "</div>";
+
+    }
+
+
+    result.innerHTML = output;
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

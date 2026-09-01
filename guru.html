@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mode Guru | SMAPRO Informatics</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f3f6fa;
+    color:#172033;
+}
+
+header{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    color:#cbd5e1;
+    margin:8px 0 0;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:25px 15px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+.card h2{
+    margin-top:0;
+}
+
+input{
+    width:100%;
+    padding:13px;
+    border:2px solid #d1d5db;
+    border-radius:10px;
+    font-size:16px;
+    margin:7px 0;
+}
+
+button{
+    border:none;
+    padding:12px 18px;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:5px;
+}
+
+button:hover{
+    transform:translateY(-1px);
+}
+
+.blue{
+    background:#2563eb;
+    color:white;
+}
+
+.green{
+    background:#16a34a;
+    color:white;
+}
+
+.red{
+    background:#dc2626;
+    color:white;
+}
+
+.gray{
+    background:#e5e7eb;
+    color:#111827;
+}
+
+.room{
+    background:#eff6ff;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    margin-top:15px;
+}
+
+.room-code{
+    font-size:35px;
+    font-weight:bold;
+    letter-spacing:5px;
+    margin:10px;
+}
+
+.share-link{
+    background:white;
+    padding:12px;
+    border-radius:10px;
+    word-break:break-all;
+    margin:10px 0;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:20px;
+}
+
+.stat{
+    background:#f8fafc;
+    border-radius:14px;
+    padding:18px;
+    text-align:center;
+}
+
+.stat-number{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.participants{
+    margin-top:15px;
+}
+
+.participant{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#f8fafc;
+    padding:13px;
+    border-radius:12px;
+    margin:8px 0;
+}
+
+.online{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.ranking{
+    margin-top:15px;
+}
+
+.rank{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#f8fafc;
+    padding:14px;
+    border-radius:12px;
+    margin:8px 0;
+}
+
+.rank-number{
+    font-size:22px;
+    font-weight:bold;
+    width:35px;
+}
+
+.rank-car{
+    font-size:28px;
+}
+
+.rank-name{
+    flex:1;
+    font-weight:bold;
+}
+
+.track{
+    position:relative;
+    height:55px;
+    background:#e5e7eb;
+    border-radius:12px;
+    margin:10px 0 18px;
+    overflow:hidden;
+}
+
+.finish{
+    position:absolute;
+    right:0;
+    top:0;
+    width:7px;
+    height:100%;
+    background:#16a34a;
+}
+
+.car{
+    position:absolute;
+    left:5px;
+    top:8px;
+    font-size:30px;
+    transition:.7s;
+}
+
+.status{
+    padding:15px;
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+.hidden{
+    display:none;
+}
+
+footer{
+    text-align:center;
+    color:#64748b;
+    padding:30px;
+}
+
+@media(max-width:650px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:23px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>👩‍🏫 MODE GURU</h1>
+
+<p>
+SMAPRO INFORMATICS • Battle Control Center
+</p>
+
+</header>
+
+<main class="container">
+
+<!-- ============================= -->
+
+<!-- CREATE BATTLE -->
+
+<!-- ============================= -->
+
+<section class="card">
+
+<h2>🏁 Buat Battle Baru</h2>
+
+<p>
+Buat arena battle untuk kelas atau kelompokmu.
+</p>
+
+<input
+type="text"
+id="teacherName"
+placeholder="Nama guru..."
+
+>
+
+<input
+type="text"
+id="battleName"
+placeholder="Nama battle, contoh: Informatics Battle XII"
+
+>
+
+<button
+class="blue"
+onclick="createTeacherBattle()"
+
+>
+
+🚀 BUAT ROOM </button>
+
+<div
+    id="roomArea"
+    class="room hidden"
+>
+
+<h3>ROOM BATTLE</h3>
+
+<div
+    class="room-code"
+    id="roomCode"
+>
+------
+</div>
+
+<p>
+Bagikan kode ini kepada siswa.
+</p>
+
+<div
+    class="share-link"
+    id="shareLink"
+>
+-
+</div>
+
+<button
+class="blue"
+onclick="shareRoom()"
+
+>
+
+📤 BAGIKAN ROOM </button>
+
+</div>
+
+</section>
+
+<!-- ============================= -->
+
+<!-- BATTLE CONTROL -->
+
+<!-- ============================= -->
+
+<section
+    class="card hidden"
+    id="controlArea"
+>
+
+<h2>🎮 Battle Control</h2>
+
+<p>
+Guru mengatur jalannya pertandingan dari halaman ini.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+
+<div
+    class="stat-number"
+    id="participantCount"
+>
+0
+</div>
+
+Peserta
+
+</div>
+
+<div class="stat">
+
+<div
+    class="stat-number"
+    id="questionCount"
+>
+8
+</div>
+
+Soal
+
+</div>
+
+<div class="stat">
+
+<div
+    class="stat-number"
+    id="battleStatus"
+>
+WAIT
+</div>
+
+Status
+
+</div>
+
+</div>
+
+<button
+class="green"
+onclick="startBattle()"
+
+>
+
+🚦 MULAI BATTLE </button>
+
+<button
+class="red"
+onclick="resetBattle()"
+
+>
+
+🔄 RESET </button>
+
+<div
+    class="status"
+    id="statusMessage"
+>
+Menunggu siswa masuk ke room...
+</div>
+
+</section>
+
+<!-- ============================= -->
+
+<!-- PARTICIPANTS -->
+
+<!-- ============================= -->
+
+<section
+    class="card hidden"
+    id="participantArea"
+>
+
+<h2>👥 Peserta Battle</h2>
+
+<div
+    id="participants"
+    class="participants"
+>
+</div>
+
+</section>
+
+<!-- ============================= -->
+
+<!-- LIVE RACE -->
+
+<!-- ============================= -->
+
+<section
+    class="card hidden"
+    id="raceArea"
+>
+
+<h2>🏎️ LIVE RACE</h2>
+
+<p>
+Pantau posisi peserta selama battle.
+</p>
+
+<div
+    id="race"
+>
+</div>
+
+</section>
+
+<!-- ============================= -->
+
+<!-- RANKING -->
+
+<!-- ============================= -->
+
+<section
+    class="card hidden"
+    id="rankingArea"
+>
+
+<h2>🏆 LIVE RANKING</h2>
+
+<div
+    id="ranking"
+    class="ranking"
+>
+</div>
+
+</section>
+
+<!-- ============================= -->
+
+<!-- FINISH -->
+
+<!-- ============================= -->
+
+<section
+    class="card hidden"
+    id="finishArea"
+    style="text-align:center;"
+>
+
+<h2>🏆 BATTLE SELESAI</h2>
+
+<p>
+Pertandingan telah selesai.
+</p>
+
+<div
+    id="finalWinner"
+    style="font-size:22px;font-weight:bold;"
+>
+</div>
+
+<br>
+
+<button
+class="blue"
+onclick="location.reload()"
+
+>
+
+🔄 BUAT BATTLE BARU </button>
+
+</section>
+
+</main>
+
+<footer>
+
+<strong>SMAPRO INFORMATICS</strong>
+
+<br>
+
+Think • Solve • Create • Innovate
+
+</footer>
+
+<script>
+
+
+/* ========================================= */
+/* DATA */
+/* ========================================= */
+
+let roomCode = "";
+
+let battleStarted = false;
+
+let participants = [];
+
+let timer;
+
+
+/* ========================================= */
+/* CREATE ROOM */
+/* ========================================= */
+
+function createTeacherBattle(){
+
+    const teacher =
+        document.getElementById("teacherName")
+        .value
+        .trim();
+
+    const battle =
+        document.getElementById("battleName")
+        .value
+        .trim();
+
+
+    if(teacher === ""){
+
+        alert("Masukkan nama guru terlebih dahulu.");
+
+        return;
+
+    }
+
+
+    if(battle === ""){
+
+        alert("Masukkan nama battle.");
+
+        return;
+
+    }
+
+
+    roomCode =
+        Math.random()
+        .toString(36)
+        .substring(2,8)
+        .toUpperCase();
+
+
+    document.getElementById("roomCode")
+        .innerText =
+        roomCode;
+
+
+    document.getElementById("shareLink")
+        .innerText =
+        window.location.origin +
+        "/battle?room=" +
+        roomCode;
+
+
+    document.getElementById("roomArea")
+        .classList
+        .remove("hidden");
+
+
+    document.getElementById("controlArea")
+        .classList
+        .remove("hidden");
+
+
+    document.getElementById("participantArea")
+        .classList
+        .remove("hidden");
+
+
+    /*
+       Contoh peserta awal.
+       Nantinya bagian ini bisa
+       dihubungkan ke database/server.
+    */
+
+    participants = [
+
+        {
+            name:"Aisyah",
+            position:10
+        },
+
+        {
+            name:"Fikri",
+            position:5
+        },
+
+        {
+            name:"Nabila",
+            position:8
+        }
+
+    ];
+
+
+    renderParticipants();
+
+    renderRace();
+
+    renderRanking();
+
+}
+
+
+
+/* ========================================= */
+/* SHARE */
+/* ========================================= */
+
+function shareRoom(){
+
+    const link =
+        window.location.origin +
+        "/battle?room=" +
+        roomCode;
+
+
+    if(navigator.share){
+
+        navigator.share({
+
+            title:"SMAPRO Informatics Battle",
+
+            text:
+            "Ayo ikut Informatics Battle SMAPRO! Room: " +
+            roomCode,
+
+            url:link
+
+        });
+
+    }
+
+    else{
+
+        navigator.clipboard
+        .writeText(link);
+
+        alert(
+            "Link battle berhasil disalin!"
+        );
+
+    }
+
+}
+
+
+
+/* ========================================= */
+/* PARTICIPANTS */
+/* ========================================= */
+
+function renderParticipants(){
+
+    const container =
+        document.getElementById("participants");
+
+
+    container.innerHTML = "";
+
+
+    participants.forEach(
+        function(player){
+
+            const div =
+                document.createElement("div");
+
+
+            div.className =
+                "participant";
+
+
+            div.innerHTML =
+
+            "<span>👤 " +
+            player.name +
+            "</span>" +
+
+            "<span class='online'>● ONLINE</span>";
+
+
+            container.appendChild(div);
+
+        }
+    );
+
+
+    document.getElementById(
+        "participantCount"
+    ).innerText =
+        participants.length;
+
+}
+
+
+
+/* ========================================= */
+/* RACE */
+/* ========================================= */
+
+function renderRace(){
+
+    const container =
+        document.getElementById("race");
+
+
+    container.innerHTML = "";
+
+
+    participants.forEach(
+        function(player,index){
+
+            const wrapper =
+                document.createElement("div");
+
+
+            wrapper.innerHTML =
+
+            "<strong>" +
+            (index+1) +
+            ". " +
+            player.name +
+            "</strong>" +
+
+            "<div class='track'>" +
+
+            "<div class='finish'></div>" +
+
+            "<div " +
+            "class='car' " +
+            "id='car" +
+            index +
+            "'>" +
+
+            ["🚗","🚙","🏎️","🚕","🚓"][index % 5] +
+
+            "</div>" +
+
+            "</div>";
+
+
+            container.appendChild(wrapper);
+
+        }
+    );
+
+}
+
+
+
+/* ========================================= */
+/* RANKING */
+/* ========================================= */
+
+function renderRanking(){
+
+    const container =
+        document.getElementById("ranking");
+
+
+    container.innerHTML = "";
+
+
+    const sorted =
+        [...participants]
+        .sort(
+            (a,b) =>
+            b.position - a.position
+        );
+
+
+    sorted.forEach(
+        function(player,index){
+
+            const div =
+                document.createElement("div");
+
+
+            div.className =
+                "rank";
+
+
+            div.innerHTML =
+
+            "<div class='rank-number'>" +
+
+            (
+                index === 0
+                ? "🥇"
+                : index === 1
+                ? "🥈"
+                : index === 2
+                ? "🥉"
+                : (index+1)
+            ) +
+
+            "</div>" +
+
+            "<div class='rank-car'>🏎️</div>" +
+
+            "<div class='rank-name'>" +
+
+            player.name +
+
+            "</div>" +
+
+            "<strong>" +
+
+            player.position +
+
+            "%</strong>";
+
+
+            container.appendChild(div);
+
+        }
+    );
+
+}
+
+
+
+/* ========================================= */
+/* START BATTLE */
+/* ========================================= */
+
+function startBattle(){
+
+    if(participants.length === 0){
+
+        alert(
+            "Belum ada peserta."
+        );
+
+        return;
+
+    }
+
+
+    battleStarted = true;
+
+
+    document.getElementById(
+        "battleStatus"
+    ).innerText =
+        "LIVE";
+
+
+    document.getElementById(
+        "statusMessage"
+    ).innerHTML =
+
+    "🔴 <strong>BATTLE SEDANG BERLANGSUNG!</strong><br>" +
+
+    "Peserta sedang berlomba menjawab pertanyaan.";
+
+
+    document.getElementById(
+        "raceArea"
+    ).classList
+    .remove("hidden");
+
+
+    document.getElementById(
+        "rankingArea"
+    ).classList
+    .remove("hidden");
+
+
+    simulateRace();
+
+}
+
+
+
+/* ========================================= */
+/* SIMULATE RACE */
+/* ========================================= */
+
+function simulateRace(){
+
+    timer =
+        setInterval(
+            function(){
+
+                participants.forEach(
+                    function(player,index){
+
+                        if(
+                            player.position < 100
+                        ){
+
+                            /*
+                               Simulasi jawaban
+                               peserta.
+                            */
+
+                            const movement =
+                                Math.floor(
+                                    Math.random()*12
+                                );
+
+
+                            player.position +=
+                                movement;
+
+
+                            if(
+                                player.position > 100
+                            ){
+
+                                player.position =
+                                    100;
+
+                            }
+
+
+                            const car =
+                                document.getElementById(
+                                    "car" + index
+                                );
+
+
+                            if(car){
+
+                                car.style.left =
+                                    "calc(" +
+                                    player.position +
+                                    "% - 35px)";
+
+                            }
+
+                        }
+
+                    }
+                );
+
+
+                renderRanking();
+
+
+                checkWinner();
+
+
+            },
+            1000
+        );
+
+}
+
+
+
+/* ========================================= */
+/* CHECK WINNER */
+/* ========================================= */
+
+function checkWinner(){
+
+    const finished =
+        participants.find(
+            player =>
+            player.position >= 100
+        );
+
+
+    if(!finished){
+
+        return;
+
+    }
+
+
+    clearInterval(timer);
+
+
+    battleStarted = false;
+
+
+    document.getElementById(
+        "battleStatus"
+    ).innerText =
+        "DONE";
+
+
+    document.getElementById(
+        "finishArea"
+    ).classList
+    .remove("hidden");
+
+
+    document.getElementById(
+        "finalWinner"
+    ).innerHTML =
+
+    "🏆 PEMENANG BATTLE 🏆<br><br>" +
+
+    "🥇 " +
+    finished.name +
+    "<br><br>" +
+
+    "Selamat! Berhasil mencapai FINISH terlebih dahulu!";
+
+
+}
+
+
+
+/* ========================================= */
+/* RESET */
+/* ========================================= */
+
+function resetBattle(){
+
+    if(timer){
+
+        clearInterval(timer);
+
+    }
+
+
+    battleStarted = false;
+
+
+    participants.forEach(
+        function(player){
+
+            player.position = 0;
+
+        }
+    );
+
+
+    document.getElementById(
+        "battleStatus"
+    ).innerText =
+        "WAIT";
+
+
+    document.getElementById(
+        "statusMessage"
+    ).innerHTML =
+        "Menunggu siswa masuk ke room...";
+
+
+    renderRace();
+
+    renderRanking();
+
+}
+
+
+</script>
+
+</body>
+
+</html>

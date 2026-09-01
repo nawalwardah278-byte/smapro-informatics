@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cyber Security | SMAPRO INFORMATICS</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#080d14;
+    color:#e5e7eb;
+    line-height:1.7;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#020617;
+    padding:55px 20px;
+    text-align:center;
+    border-bottom:2px solid #16a34a;
+}
+
+.logo{
+    font-size:70px;
+}
+
+header h1{
+    font-size:42px;
+    color:#22c55e;
+    margin:10px 0;
+}
+
+header p{
+    color:#94a3b8;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 18px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#111827;
+    border:1px solid #263244;
+    border-radius:22px;
+    padding:30px;
+    margin-bottom:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.card h2{
+    color:#22c55e;
+    margin-top:0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:45px 25px;
+    background:linear-gradient(135deg,#020617,#111827);
+    border:1px solid #1f2937;
+    border-radius:25px;
+    margin-bottom:25px;
+}
+
+.hero-icon{
+    font-size:75px;
+}
+
+.hero h2{
+    font-size:36px;
+    color:#22c55e;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+}
+
+/* ================= BUTTON ================= */
+
+button,
+.btn{
+    border:none;
+    border-radius:10px;
+    padding:13px 20px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+    transition:.2s;
+}
+
+button:hover,
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.green{
+    background:#16a34a;
+    color:white;
+}
+
+.red{
+    background:#dc2626;
+    color:white;
+}
+
+.blue{
+    background:#2563eb;
+    color:white;
+}
+
+.gray{
+    background:#374151;
+    color:white;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* ================= GRID ================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.grid2{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.box{
+    background:#1f2937;
+    border-radius:17px;
+    padding:22px;
+    text-align:center;
+}
+
+.icon{
+    font-size:45px;
+}
+
+/* ================= INFO ================= */
+
+.info{
+    background:#172554;
+    border-left:6px solid #2563eb;
+    padding:18px;
+    border-radius:10px;
+}
+
+.warning{
+    background:#431407;
+    border-left:6px solid #f97316;
+    padding:18px;
+    border-radius:10px;
+}
+
+.success{
+    background:#052e16;
+    border-left:6px solid #22c55e;
+    padding:18px;
+    border-radius:10px;
+}
+
+.danger{
+    background:#450a0a;
+    border:2px solid #ef4444;
+    padding:22px;
+    border-radius:15px;
+}
+
+/* ================= TERMINAL ================= */
+
+.terminal{
+    background:#020617;
+    color:#22c55e;
+    padding:25px;
+    border-radius:15px;
+    font-family:monospace;
+    min-height:180px;
+    border:1px solid #14532d;
+}
+
+.terminal span{
+    color:#86efac;
+}
+
+/* ================= INTERACTIVE ================= */
+
+.interactive{
+    background:#0b1220;
+    border:2px dashed #334155;
+    padding:25px;
+    border-radius:18px;
+    margin-top:20px;
+}
+
+select,
+input,
+textarea{
+    width:100%;
+    padding:13px;
+    border-radius:10px;
+    border:2px solid #334155;
+    background:#020617;
+    color:white;
+    font-size:16px;
+    margin:8px 0;
+}
+
+textarea{
+    min-height:120px;
+}
+
+/* ================= HACK SCREEN ================= */
+
+.hack-screen{
+    background:#020617;
+    border:2px solid #ef4444;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    margin:20px 0;
+}
+
+.hack-title{
+    font-size:45px;
+    color:#ef4444;
+    font-weight:bold;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:.4;
+    }
+
+}
+
+.hack-bar{
+    height:18px;
+    background:#1f2937;
+    border-radius:20px;
+    overflow:hidden;
+    margin:20px 0;
+}
+
+.hack-progress{
+    width:0%;
+    height:100%;
+    background:#ef4444;
+    transition:1s;
+}
+
+/* ================= PHISHING ================= */
+
+.email{
+    background:#f8fafc;
+    color:#111827;
+    padding:22px;
+    border-radius:15px;
+    text-align:left;
+}
+
+.email-header{
+    border-bottom:1px solid #cbd5e1;
+    padding-bottom:10px;
+    margin-bottom:15px;
+}
+
+/* ================= FACE ACCESS ================= */
+
+.face-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.face{
+    background:#020617;
+    border:2px solid #334155;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.face:hover{
+    border-color:#22c55e;
+    transform:scale(1.03);
+}
+
+.face-icon{
+    font-size:70px;
+}
+
+/* ================= SCORE ================= */
+
+.score-card{
+    background:#020617;
+    border:2px solid #22c55e;
+    border-radius:25px;
+    text-align:center;
+    padding:35px;
+}
+
+.score{
+    font-size:65px;
+    font-weight:bold;
+    color:#22c55e;
+}
+
+.progress{
+    height:18px;
+    background:#1f2937;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#22c55e;
+    transition:.5s;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#64748b;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:750px){
+
+    .grid,
+    .grid2,
+    .face-grid{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:30px;
+    }
+
+    .hack-title{
+        font-size:32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================================================= -->
+
+<!-- HEADER -->
+
+<!-- ================================================= -->
+
+<header>
+
+<div class="logo">
+🛡️
+</div>
+
+<h1>
+CYBER SECURITY
+</h1>
+
+<p>
+SMAPRO INFORMATICS
+</p>
+
+<p>
+Think like a defender. Understand how attacks happen.
+</p>
+
+</header>
+
+<main class="container">
+
+<!-- ================================================= -->
+
+<!-- HERO -->
+
+<!-- ================================================= -->
+
+<section class="hero">
+
+<div class="hero-icon">
+🕵️‍♀️ 🔐 💻
+</div>
+
+<h2>
+WELCOME TO CYBER SECURITY LAB
+</h2>
+
+<p>
+Internet bukan hanya tempat untuk bermain,
+belajar, dan berkomunikasi.
+Di balik layar terdapat berbagai ancaman digital.
+</p>
+
+<br>
+
+<p>
+Hari ini kamu tidak hanya belajar tentang keamanan.
+</p>
+
+<h3>
+🔥 KAMU AKAN MENJADI CYBER INVESTIGATOR.
+</h3>
+
+<a href="#mission">
+
+<button class="green">
+🚨 MULAI INVESTIGASI
+</button>
+
+</a>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- MISSION -->
+
+<!-- ================================================= -->
+
+<section class="card" id="mission">
+
+<h2>
+🚨 CYBER MISSION
+</h2>
+
+<div class="danger">
+
+<h2>
+⚠️ SECURITY ALERT
+</h2>
+
+<p>
+Sistem SMAPRO mendeteksi aktivitas mencurigakan.
+</p>
+
+<p>
+Beberapa akun mencoba login dari lokasi yang tidak dikenal.
+</p>
+
+<p>
+Terdapat pesan mencurigakan yang masuk ke sistem.
+</p>
+
+<h3>
+Tugasmu:
+</h3>
+
+<p>
+Cari tahu bagaimana serangan dapat terjadi
+dan bagaimana cara menghentikannya.
+</p>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- WHAT IS CYBER SECURITY -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🛡️ 1. APA ITU CYBER SECURITY?
+</h2>
+
+<p>
+Cyber Security adalah usaha untuk melindungi
+sistem, perangkat, jaringan, aplikasi,
+dan data dari akses atau aktivitas yang tidak sah.
+</p>
+
+<div class="grid">
+
+<div class="box">
+
+<div class="icon">
+🔐
+</div>
+
+<h3>
+CONFIDENTIALITY
+</h3>
+
+<p>
+Informasi hanya boleh diakses
+oleh pihak yang memiliki izin.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+🧩
+</div>
+
+<h3>
+INTEGRITY
+</h3>
+
+<p>
+Data harus tetap benar
+dan tidak diubah sembarangan.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+⚡
+</div>
+
+<h3>
+AVAILABILITY
+</h3>
+
+<p>
+Sistem harus tetap dapat
+digunakan ketika dibutuhkan.
+</p>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<strong>🧠 Ingat:</strong>
+
+<br><br>
+
+Keamanan digital bukan hanya tentang
+membuat password.
+
+<br><br>
+
+Keamanan adalah cara berpikir
+untuk mengantisipasi risiko.
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- HACKER -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🕵️ 2. SIAPA ITU HACKER?
+</h2>
+
+<p>
+Hacker adalah seseorang yang memiliki kemampuan
+memahami dan mengeksplorasi sistem komputer.
+Namun tujuan dan tindakannya dapat berbeda.
+</p>
+
+<div class="grid">
+
+<div class="box">
+
+<div class="icon">
+👨‍💻
+</div>
+
+<h3>
+WHITE HAT
+</h3>
+
+<p>
+Menggunakan kemampuan keamanan
+untuk menemukan dan memperbaiki
+kelemahan sistem secara legal.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+😈
+</div>
+
+<h3>
+BLACK HAT
+</h3>
+
+<p>
+Menggunakan kemampuan untuk
+melakukan tindakan ilegal
+atau merugikan pihak lain.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+🌓
+</div>
+
+<h3>
+GRAY HAT
+</h3>
+
+<p>
+Berada di antara keduanya
+dan dapat melakukan eksplorasi
+tanpa izin yang jelas.
+</p>
+
+</div>
+
+</div>
+
+<div class="warning">
+
+⚠️ <strong>PENTING</strong>
+
+<br><br>
+
+Di dunia nyata, mencoba masuk ke sistem
+orang lain tanpa izin dapat melanggar hukum.
+
+<br><br>
+
+Di lab ini kita menggunakan <strong>SIMULASI AMAN</strong>
+untuk mempelajari cara berpikir attacker
+dan defender.
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- SOCIAL ENGINEERING -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🎭 3. SOCIAL ENGINEERING
+</h2>
+
+<p>
+Tidak semua serangan dimulai dari komputer.
+Kadang penyerang mencoba memanipulasi manusia.
+</p>
+
+<div class="terminal">
+
+<span>ATTACKER:</span>
+
+<br>
+
+"Saya lupa password akun saya."
+
+<br><br>
+
+<span>VICTIM:</span>
+
+<br>
+
+"Baik, saya bantu."
+
+<br><br>
+
+<span>ATTACKER:</span>
+
+<br>
+
+"Kode OTP-nya berapa?"
+
+</div>
+
+<br>
+
+<div class="danger">
+
+<strong>
+🚨 MASALAHNYA BUKAN TEKNOLOGINYA.
+</strong>
+
+<br><br>
+
+Masalahnya adalah manusia
+memberikan informasi rahasia.
+
+</div>
+
+<div class="info">
+
+<strong>
+Rule of Security:
+</strong>
+
+<br><br>
+
+Password, PIN, OTP, dan kode verifikasi
+tidak boleh diberikan kepada orang lain.
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- PHISHING -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🎣 4. PHISHING DETECTIVE
+</h2>
+
+<p>
+Sekarang kamu menjadi investigator.
+Apakah email berikut aman?
+</p>
+
+<div class="email">
+
+<div class="email-header">
+
+<strong>
+From:
+</strong>
+
+[security-smpr0@gmail.com](mailto:security-smpr0@gmail.com)
+
+<br>
+
+<strong>
+Subject:
+</strong>
+
+AKUN ANDA AKAN DIBLOKIR!!!
+
+</div>
+
+<p>
+Halo pengguna.
+</p>
+
+<p>
+Kami mendeteksi aktivitas mencurigakan.
+</p>
+
+<p>
+Klik link berikut untuk melakukan verifikasi
+dalam waktu 10 menit.
+</p>
+
+<p>
+<strong>
+👉 VERIFY ACCOUNT NOW
+</strong>
+</p>
+
+<p>
+Jika tidak dilakukan,
+akun akan dihapus.
+</p>
+
+</div>
+
+<div class="interactive">
+
+<select id="phishing">
+
+<option value="">
+Pilih jawaban
+</option>
+
+<option value="aman">
+Aman
+</option>
+
+<option value="phishing">
+Kemungkinan phishing
+</option>
+
+<option value="virus">
+Pasti virus
+</option>
+
+</select>
+
+<button class="green" onclick="checkPhishing()">
+🔎 INVESTIGASI
+</button>
+
+<div id="phishingResult" class="result">
+Analisis pesan tersebut.
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- PASSWORD -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🔐 5. PASSWORD LAB
+</h2>
+
+<p>
+Penyerang sering mencoba menebak password
+yang mudah diprediksi.
+</p>
+
+<div class="grid2">
+
+<div class="box">
+
+❌
+
+<h3>
+123456
+</h3>
+
+<p>
+Sangat mudah ditebak.
+</p>
+
+</div>
+
+<div class="box">
+
+❌
+
+<h3>
+password
+</h3>
+
+<p>
+Terlalu umum.
+</p>
+
+</div>
+
+<div class="box">
+
+❌
+
+<h3>
+nawal123
+</h3>
+
+<p>
+Menggunakan informasi pribadi.
+</p>
+
+</div>
+
+<div class="box">
+
+✅
+
+<h3>
+Pass!7_River#Moon
+</h3>
+
+<p>
+Lebih panjang dan kompleks.
+</p>
+
+</div>
+
+</div>
+
+<div class="interactive">
+
+<h3>
+🔑 PASSWORD CHALLENGE
+</h3>
+
+<p>
+Pilih password yang paling aman.
+</p>
+
+<select id="password">
+
+<option value="">
+Pilih
+</option>
+
+<option value="123456">
+123456
+</option>
+
+<option value="sekolah2026">
+sekolah2026
+</option>
+
+<option value="Nawal123">
+Nawal123
+</option>
+
+<option value="Kopi!7_Bulan#Robot">
+Kopi!7_Bulan#Robot
+</option>
+
+</select>
+
+<button class="green" onclick="checkPassword()">
+🔐 UJI PASSWORD
+</button>
+
+<div id="passwordResult" class="result">
+Belum diuji.
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- HACK SIMULATION -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🚨 6. YOU ARE BEING HACKED!
+</h2>
+
+<p>
+Sekarang kita masuk ke simulasi.
+Tenang — ini hanya permainan.
+Tidak ada akun atau perangkat yang benar-benar diretas.
+</p>
+
+<div class="hack-screen">
+
+<div class="hack-title">
+⚠️ SYSTEM BREACHED ⚠️
+</div>
+
+<p>
+Unauthorized login detected...
+</p>
+
+<div class="hack-bar">
+
+<div id="hackProgress" class="hack-progress">
+</div>
+
+</div>
+
+<p id="hackText">
+Tekan tombol untuk memulai simulasi.
+</p>
+
+<button class="red" onclick="startHack()">
+💻 START ATTACK SIMULATION
+</button>
+
+</div>
+
+<div class="interactive">
+
+<h3>
+🧠 DEFENDER DECISION
+</h3>
+
+<p>
+Jika kamu mendapat notifikasi login
+dari perangkat yang tidak dikenal,
+apa tindakan pertama?
+</p>
+
+<select id="hackDecision">
+
+<option value="">
+Pilih tindakan
+</option>
+
+<option value="ignore">
+Mengabaikannya
+</option>
+
+<option value="password">
+Mengganti password dan mengamankan akun
+</option>
+
+<option value="share">
+Memberikan OTP kepada orang tersebut
+</option>
+
+<option value="post">
+Membagikan screenshot ke media sosial
+</option>
+
+</select>
+
+<button class="green" onclick="checkHackDecision()">
+🛡️ AMANKAN AKUN
+</button>
+
+<div id="hackResult" class="result">
+Sistem menunggu keputusanmu.
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- FACE ACCESS -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🧑‍💻 7. FACE ACCESS CHALLENGE
+</h2>
+
+<p>
+Bayangkan kamu adalah petugas keamanan digital.
+Sistem menampilkan beberapa identitas.
+</p>
+
+<p>
+Hanya orang yang terdaftar
+yang boleh mendapatkan akses.
+</p>
+
+<div class="face-grid">
+
+<div class="face" onclick="checkFace('siswa')">
+
+<div class="face-icon">
+👩🏻
+</div>
+
+<h3>
+SISWA A
+</h3>
+
+<p>
+Status: Terdaftar
+</p>
+
+</div>
+
+<div class="face" onclick="checkFace('asing')">
+
+<div class="face-icon">
+🧔🏻
+</div>
+
+<h3>
+UNKNOWN
+</h3>
+
+<p>
+Status: Tidak dikenal
+</p>
+
+</div>
+
+<div class="face" onclick="checkFace('siswa')">
+
+<div class="face-icon">
+👨🏻
+</div>
+
+<h3>
+SISWA B
+</h3>
+
+<p>
+Status: Terdaftar
+</p>
+
+</div>
+
+</div>
+
+<div id="faceResult" class="result">
+
+🔒 Pilih salah satu identitas.
+
+</div>
+
+<div class="info">
+
+💡 Dalam sistem nyata,
+pengenalan wajah harus memperhatikan
+privasi, keamanan data, dan persetujuan.
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- INCIDENT RESPONSE -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🚑 8. INCIDENT RESPONSE
+</h2>
+
+<p>
+Bayangkan kamu mendapatkan pesan:
+</p>
+
+<div class="danger">
+
+"Password akunmu baru saja diganti."
+
+<br><br>
+
+Padahal kamu tidak pernah menggantinya.
+
+</div>
+
+<p>
+Apa yang harus dilakukan?
+</p>
+
+<div class="interactive">
+
+<select id="incident">
+
+<option value="">
+Pilih tindakan
+</option>
+
+<option value="wait">
+Menunggu beberapa hari
+</option>
+
+<option value="secure">
+Segera mengamankan akun dan memeriksa aktivitas login
+</option>
+
+<option value="share">
+Memberikan password kepada teman
+</option>
+
+<option value="delete">
+Menghapus semua bukti
+</option>
+
+</select>
+
+<button class="green" onclick="checkIncident()">
+🚨 RESPOND
+</button>
+
+<div id="incidentResult" class="result">
+Incident belum ditangani.
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- CYBER THINKING -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🧠 9. THINK LIKE A CYBER DEFENDER
+</h2>
+
+<p>
+Cyber Security membutuhkan pola pikir kritis.
+Jangan langsung percaya pada informasi yang muncul.
+</p>
+
+<div class="grid">
+
+<div class="box">
+
+🔎
+
+<h3>
+VERIFY
+</h3>
+
+<p>
+Apakah informasi tersebut benar?
+</p>
+
+</div>
+
+<div class="box">
+
+⚠️
+
+<h3>
+QUESTION
+</h3>
+
+<p>
+Apa yang mencurigakan?
+</p>
+
+</div>
+
+<div class="box">
+
+🛡️
+
+<h3>
+PROTECT
+</h3>
+
+<p>
+Bagaimana cara mengurangi risiko?
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- FINAL MISSION -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🏆 FINAL CYBER MISSION
+</h2>
+
+<div class="danger">
+
+<h3>
+🚨 SMAPRO SECURITY INCIDENT
+</h3>
+
+<p>
+Sebuah akun siswa menerima email mencurigakan.
+</p>
+
+<p>
+Siswa tersebut kemudian memberikan
+informasi login kepada seseorang
+yang mengaku sebagai admin.
+</p>
+
+<p>
+Beberapa menit kemudian terdapat
+login dari perangkat asing.
+</p>
+
+</div>
+
+<h3>
+Pertanyaan:
+</h3>
+
+<p>
+Apa yang sebenarnya terjadi?
+Bagaimana serangan tersebut dapat terjadi?
+Dan apa yang harus dilakukan korban?
+</p>
+
+<textarea
+id="finalCyber"
+placeholder="Tuliskan analisismu di sini...">
+</textarea>
+
+<button class="green" onclick="finalCyberMission()">
+🏆 SUBMIT INVESTIGATION
+</button>
+
+<div id="finalResult" class="result">
+Investigation belum dikirim.
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- SCORE -->
+
+<!-- ================================================= -->
+
+<section class="score-card">
+
+<h2>
+🛡️ CYBER SECURITY SCORE
+</h2>
+
+<div class="score">
+
+<span id="score">
+0
+</span>
+
+</div>
+
+<p>
+POINTS
+</p>
+
+<div class="progress">
+
+<div
+id="progress"
+class="progress-bar">
+</div>
+
+</div>
+
+<h3 id="rank">
+🌱 CYBER ROOKIE
+</h3>
+
+<p id="message">
+Selesaikan misi untuk meningkatkan levelmu.
+</p>
+
+</section>
+
+<!-- ================================================= -->
+
+<!-- SUMMARY -->
+
+<!-- ================================================= -->
+
+<section class="card">
+
+<h2>
+🎓 WHAT DID YOU LEARN?
+</h2>
+
+<div class="grid">
+
+<div class="box">
+
+🔐
+
+<strong>
+PASSWORD
+</strong>
+
+<p>
+Gunakan password kuat.
+</p>
+
+</div>
+
+<div class="box">
+
+🎣
+
+<strong>
+PHISHING
+</strong>
+
+<p>
+Jangan mudah percaya pesan.
+</p>
+
+</div>
+
+<div class="box">
+
+🧠
+
+<strong>
+CRITICAL THINKING
+</strong>
+
+<p>
+Periksa sebelum percaya.
+</p>
+
+</div>
+
+<div class="box">
+
+🛡️
+
+<strong>
+DEFENSE
+</strong>
+
+<p>
+Lindungi akun dan data.
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<div class="success">
+
+<strong>
+🔥 MISSION COMPLETE
+</strong>
+
+<br><br>
+
+Cyber Security bukan berarti
+harus menjadi hacker.
+
+<br><br>
+
+Yang lebih penting adalah <strong>
+memahami bagaimana serangan terjadi
+dan bagaimana cara melindungi diri. </strong>
+
+<br><br>
+
+🧠 THINK
+
+→
+
+🔎 VERIFY
+
+→
+
+🛡️ PROTECT
+
+→
+
+🚨 RESPOND
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+
+<a href="/">
+
+<button class="gray">
+🏠 KEMBALI KE SMAPRO INFORMATICS
+</button>
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<strong>
+SMAPRO INFORMATICS
+</strong>
+
+<br>
+
+Think • Explore • Protect • Create
+
+</footer>
+
+<script>
+
+/* ================================================= */
+/* SCORE SYSTEM */
+/* ================================================= */
+
+let score = 0;
+
+let completed = {};
+
+
+function addScore(points,name){
+
+    if(completed[name]){
+        return;
+    }
+
+    completed[name] = true;
+
+    score += points;
+
+    updateScore();
+
+}
+
+
+function updateScore(){
+
+    document.getElementById("score").innerText = score;
+
+    let percentage = Math.min(score,100);
+
+    document.getElementById("progress").style.width =
+        percentage + "%";
+
+
+    if(score >= 80){
+
+        document.getElementById("rank").innerHTML =
+        "🏆 CYBER SECURITY MASTER";
+
+        document.getElementById("message").innerHTML =
+        "Luar biasa! Kamu mampu berpikir seperti cyber defender.";
+
+    }
+
+    else if(score >= 50){
+
+        document.getElementById("rank").innerHTML =
+        "🥇 SECURITY ANALYST";
+
+        document.getElementById("message").innerHTML =
+        "Bagus! Kamu mulai mampu mendeteksi ancaman.";
+
+    }
+
+    else if(score >= 20){
+
+        document.getElementById("rank").innerHTML =
+        "🥈 CYBER DEFENDER";
+
+        document.getElementById("message").innerHTML =
+        "Kamu mulai memahami dasar keamanan digital.";
+
+    }
+
+    else{
+
+        document.getElementById("rank").innerHTML =
+        "🌱 CYBER ROOKIE";
+
+        document.getElementById("message").innerHTML =
+        "Mulai investigasi dan lindungi akunmu.";
+
+    }
+
+}
+
+
+
+/* ================================================= */
+/* PHISHING */
+/* ================================================= */
+
+function checkPhishing(){
+
+    let answer =
+    document.getElementById("phishing").value;
+
+    let result =
+    document.getElementById("phishingResult");
+
+
+    if(answer === "phishing"){
+
+        addScore(10,"phishing");
+
+        result.innerHTML =
+        '<div class="success">' +
+
+        '🎣 BENAR! Ini memiliki ciri phishing.' +
+
+        '<br><br>' +
+
+        'Perhatikan alamat pengirim, tekanan waktu,' +
+        'dan permintaan klik link.' +
+
+        '<br><br>⭐ +10 POINTS' +
+
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+
+        '⚠️ Perhatikan alamat pengirim dan pola pesan.' +
+
+        '</div>';
+
+    }
+
+}
+
+
+
+/* ================================================= */
+/* PASSWORD */
+/* ================================================= */
+
+function checkPassword(){
+
+    let answer =
+    document.getElementById("password").value;
+
+    let result =
+    document.getElementById("passwordResult");
+
+
+    if(answer === "Kopi!7_Bulan#Robot"){
+
+        addScore(10,"password");
+
+        result.innerHTML =
+        '<div class="success">' +
+
+        '🔐 BENAR!' +
+
+        '<br><br>' +
+
+        'Password yang lebih panjang dan tidak mudah ditebak ' +
+        'umumnya lebih kuat.' +
+
+        '<br><br>⭐ +10 POINTS' +
+
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+
+        '❌ Coba cari password yang lebih panjang,' +
+        'unik, dan tidak menggunakan informasi pribadi.' +
+
+        '</div>';
+
+    }
+
+}
+
+
+
+/* ================================================= */
+/* HACK SIMULATION */
+/* ================================================= */
+
+function startHack(){
+
+    let progress =
+    document.getElementById("hackProgress");
+
+    let text =
+    document.getElementById("hackText");
+
+    progress.style.width = "25%";
+
+    text.innerHTML =
+    "🔎 Mendeteksi login mencurigakan...";
+
+    setTimeout(function(){
+
+        progress.style.width = "50%";
+
+        text.innerHTML =
+        "⚠️ Perangkat tidak dikenal ditemukan...";
+
+    },1000);
+
+
+    setTimeout(function(){
+
+        progress.style.width = "75%";
+
+        text.innerHTML =
+        "🚨 Percobaan akses terdeteksi...";
+
+    },2000);
+
+
+    setTimeout(function(){
+
+        progress.style.width = "100%";
+
+        text.innerHTML =
+        "🛡️ Sekarang kamu harus mengambil keputusan sebagai defender.";
+
+    },3000);
+
+}
+
+
+
+/* ================================================= */
+/* HACK DECISION */
+/* ================================================= */
+
+function checkHackDecision(){
+
+    let answer =
+    document.getElementById("hackDecision").value;
+
+    let result =
+    document.getElementById("hackResult");
+
+
+    if(answer === "password"){
+
+        addScore(10,"hackDecision");
+
+        result.innerHTML =
+        '<div class="success">' +
+
+        '🛡️ AKUN BERHASIL DIAMANKAN!' +
+
+        '<br><br>' +
+
+        'Langkah yang tepat adalah mengamankan akun,' +
+        'mengganti password,' +
+        'dan memeriksa aktivitas login.' +
+
+        '<br><br>⭐ +10 POINTS' +
+
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+
+        '🚨 Sistem masih berisiko.' +
+
+        '<br><br>' +
+
+        'Jangan berikan OTP atau informasi rahasia.' +
+
+        '</div>';
+
+    }
+
+}
+
+
+
+/* ================================================= */
+/* FACE ACCESS */
+/* ================================================= */
+
+function checkFace(type){
+
+    let result =
+    document.getElementById("faceResult");
+
+
+    if(type === "asing"){
+
+        addScore(10,"face");
+
+        result.innerHTML =
+        '<div class="success">' +
+
+        '🛡️ ACCESS DENIED!' +
+
+        '<br><br>' +
+
+        'Identitas tidak terdaftar.' +
+
+        '<br><br>⭐ +10 POINTS' +
+
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="info">' +
+
+        '🔓 Identitas tersebut terdaftar.' +
+
+        '<br><br>' +
+
+        'Tetap ingat: sistem autentikasi nyata ' +
+        'harus memperhatikan keamanan dan privasi.' +
+
+        '</div>';
+
+    }
+
+}
+
+
+
+/* ================================================= */
+/* INCIDENT */
+/* ================================================= */
+
+function checkIncident(){
+
+    let answer =
+    document.getElementById("incident").value;
+
+    let result =
+    document.getElementById("incidentResult");
+
+
+    if(answer === "secure"){
+
+        addScore(10,"incident");
+
+        result.innerHTML =
+        '<div class="success">' +
+
+        '🚨 INCIDENT CONTAINED!' +
+
+        '<br><br>' +
+
+        'Segera amankan akun dan periksa aktivitas login.' +
+
+        '<br><br>⭐ +10 POINTS' +
+
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+
+        '⚠️ Jangan menunggu ketika terdapat aktivitas akun ' +
+        'yang tidak kamu lakukan.' +
+
+        '</div>';
+
+    }
+
+}
+
+
+
+/* ================================================= */
+/* FINAL */
+/* ================================================= */
+
+function finalCyberMission(){
+
+    let answer =
+    document.getElementById("finalCyber").value;
+
+    let result =
+    document.getElementById("finalResult");
+
+
+    if(answer.length >= 60){
+
+        addScore(30,"finalCyber");
+
+        result.innerHTML =
+        '<div class="success">' +
+
+        '🏆 CYBER INVESTIGATION COMPLETE!' +
+
+        '<br><br>' +
+
+        'Kamu berhasil mengidentifikasi ' +
+        'social engineering, phishing, ' +
+        'dan aktivitas login mencurigakan.' +
+
+        '<br><br>' +
+
+        '⭐ +30 POINTS' +
+
+        '<br><br>' +
+
+        '🔥 Kamu telah menyelesaikan Cyber Security Lab.' +
+
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+
+        '💡 Analisis masih terlalu singkat.' +
+
+        '<br><br>' +
+
+        'Jelaskan bagaimana korban bisa tertipu, ' +
+        'apa informasi yang diberikan, ' +
+        'dan tindakan apa yang seharusnya dilakukan.' +
+
+        '</div>';
+
+    }
+
+}
+
+
+updateScore();
+
+</script>
+
+</body>
+
+</html>
