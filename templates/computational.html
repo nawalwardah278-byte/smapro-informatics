@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Computational Thinking | SMAPRO INFORMATICS LAB</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f3f6fa;
+    color:#172033;
+    line-height:1.7;
+}
+
+header{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:65px 20px;
+}
+
+.logo{
+    font-size:75px;
+}
+
+header h1{
+    font-size:42px;
+    margin:10px 0;
+}
+
+header p{
+    color:#cbd5e1;
+    margin:5px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.hero{
+    background:white;
+    padding:45px 30px;
+    border-radius:28px;
+    text-align:center;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+.hero-icon{
+    font-size:80px;
+}
+
+.hero h2{
+    font-size:34px;
+}
+
+.btn,
+button{
+    border:none;
+    border-radius:12px;
+    padding:14px 22px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.primary{
+    background:#111827;
+    color:white;
+}
+
+.blue{
+    background:#2563eb;
+    color:white;
+}
+
+.green{
+    background:#16a34a;
+    color:white;
+}
+
+.orange{
+    background:#ea580c;
+    color:white;
+}
+
+.card{
+    background:white;
+    padding:32px;
+    border-radius:24px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.card h2{
+    margin-top:0;
+}
+
+.mission{
+    background:#111827;
+    color:white;
+    padding:30px;
+    border-radius:20px;
+    margin:20px 0;
+}
+
+.info{
+    background:#eff6ff;
+    border-left:6px solid #2563eb;
+    padding:20px;
+    border-radius:12px;
+    margin:20px 0;
+}
+
+.success{
+    background:#ecfdf5;
+    border-left:6px solid #16a34a;
+    padding:20px;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:6px solid #f97316;
+    padding:20px;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+.danger{
+    background:#fef2f2;
+    border-left:6px solid #dc2626;
+    padding:20px;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.grid2{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.box{
+    background:#f1f5f9;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+}
+
+.icon{
+    font-size:48px;
+}
+
+.big-number{
+    font-size:50px;
+    font-weight:bold;
+}
+
+.flow{
+    background:#f1f5f9;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.arrow{
+    font-size:28px;
+    margin:5px;
+}
+
+.challenge{
+    background:#f8fafc;
+    border:2px dashed #cbd5e1;
+    padding:25px;
+    border-radius:18px;
+    margin-top:20px;
+}
+
+select,
+textarea,
+input{
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    border:2px solid #cbd5e1;
+    border-radius:10px;
+    font-size:16px;
+}
+
+textarea{
+    min-height:120px;
+}
+
+.result{
+    margin-top:15px;
+    padding:17px;
+    background:#eef2f7;
+    border-radius:12px;
+}
+
+.timeline{
+    border-left:5px solid #111827;
+    padding-left:25px;
+}
+
+.timeline-item{
+    margin-bottom:30px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 13px;
+    background:#e5e7eb;
+    border-radius:20px;
+    margin:4px;
+    font-weight:bold;
+}
+
+.score{
+    background:#111827;
+    color:white;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.score-number{
+    font-size:70px;
+    font-weight:bold;
+}
+
+.progress{
+    height:18px;
+    background:#374151;
+    border-radius:20px;
+    overflow:hidden;
+    margin:20px 0;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#22c55e;
+    transition:.5s;
+}
+
+footer{
+    text-align:center;
+    padding:45px;
+    color:#64748b;
+}
+
+@media(max-width:750px){
+
+    header h1{
+        font-size:29px;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid2{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🧠
+</div>
+
+<h1>
+COMPUTATIONAL THINKING
+</h1>
+
+<p>
+SMAPRO INFORMATICS LAB
+</p>
+
+<p>
+Learn to Think • Solve Problems • Create Solutions
+</p>
+
+</header>
+
+<main class="container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-icon">
+🧠 🔎 💡 🧩
+</div>
+
+<h2>
+THINK BEFORE YOU SOLVE
+</h2>
+
+<p>
+Komputer memang sangat cepat.
+Tetapi komputer tidak otomatis tahu
+apa yang harus dilakukan.
+</p>
+
+<p>
+<strong>
+Manusia harus mengajarkan cara berpikirnya.
+</strong>
+</p>
+
+<br>
+
+<a href="#start" class="btn primary">
+🚀 MULAI PERJALANAN
+</a>
+
+</section>
+
+<!-- OPENING -->
+
+<section class="card" id="start">
+
+<h2>
+🎬 THE PROBLEM
+</h2>
+
+<div class="mission">
+
+<h2>
+Bayangkan kamu mendapatkan masalah:
+</h2>
+
+<h2>
+"SEKOLAH KAMU MEMILIKI 500 DATA SISWA."
+</h2>
+
+<p>
+Kamu diminta mencari siswa yang belum membayar,
+mengurutkan berdasarkan kelas,
+menghitung jumlah pembayaran,
+dan membuat laporan.
+</p>
+
+<h3>
+Apakah kamu akan memeriksa 500 data satu per satu secara acak?
+</h3>
+
+<p>
+❌ Tentu melelahkan.
+</p>
+
+<p>
+Lalu bagaimana cara membuat pekerjaan itu
+menjadi lebih cepat dan teratur?
+</p>
+
+<h2>
+🧠 DI SINILAH COMPUTATIONAL THINKING DIGUNAKAN.
+</h2>
+
+</div>
+
+</section>
+
+<!-- WHAT -->
+
+<section class="card">
+
+<h2>
+🧠 APA ITU COMPUTATIONAL THINKING?
+</h2>
+
+<p>
+Computational Thinking adalah cara berpikir
+untuk memecahkan masalah secara sistematis,
+logis, terstruktur, dan dapat diulang.
+</p>
+
+<div class="info">
+
+<strong>
+Computational Thinking bukan berarti
+"berpikir seperti robot".
+</strong>
+
+<br><br>
+
+Computational Thinking berarti <strong>
+memecah masalah,
+mencari pola,
+menyaring informasi penting,
+dan membuat langkah penyelesaian
+yang jelas. </strong>
+
+</div>
+
+<h3>
+Yang menarik:
+</h3>
+
+<p>
+Kamu sebenarnya sudah menggunakan
+Computational Thinking setiap hari.
+</p>
+
+<div class="grid2">
+
+<div class="box">
+
+<div class="icon">🍜</div>
+
+<h3>
+MEMASAK
+</h3>
+
+<p>
+Menentukan bahan,
+urutan langkah,
+dan waktu memasak.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">🚌</div>
+
+<h3>
+PERJALANAN
+</h3>
+
+<p>
+Memilih rute tercepat
+berdasarkan kondisi jalan.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">🎮</div>
+
+<h3>
+GAME
+</h3>
+
+<p>
+Membaca pola lawan
+dan menentukan strategi.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">📱</div>
+
+<h3>
+MEDIA SOSIAL
+</h3>
+
+<p>
+Memilah informasi
+yang penting dan tidak penting.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- 4 PILLARS -->
+
+<section class="card">
+
+<h2>
+🧩 EMPAT KEKUATAN COMPUTATIONAL THINKING
+</h2>
+
+<div class="grid">
+
+<div class="box">
+
+<div class="icon">
+🧩
+</div>
+
+<h3>
+DECOMPOSITION
+</h3>
+
+<p>
+Pecah masalah besar
+menjadi bagian kecil.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+🔎
+</div>
+
+<h3>
+PATTERN RECOGNITION
+</h3>
+
+<p>
+Cari kesamaan
+dan pola yang berulang.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+🎯
+</div>
+
+<h3>
+ABSTRACTION
+</h3>
+
+<p>
+Ambil informasi
+yang benar-benar penting.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+📋
+</div>
+
+<h3>
+ALGORITHM
+</h3>
+
+<p>
+Susun langkah penyelesaian
+secara sistematis.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DECOMPOSITION -->
+
+<section class="card">
+
+<h2>
+🧩 LEVEL 1 — DECOMPOSITION
+</h2>
+
+<p>
+Masalah besar sering terasa sulit
+karena kita melihat semuanya sekaligus.
+</p>
+
+<div class="mission">
+
+<h2>
+MASALAH:
+</h2>
+
+<h2>
+"ADAKAN ACARA SEKOLAH."
+</h2>
+
+</div>
+
+<p>
+Jangan langsung mengerjakan semuanya.
+Pecah menjadi bagian-bagian.
+</p>
+
+<div class="flow">
+
+🎯 TUJUAN
+
+<div class="arrow">↓</div>
+
+👥 PESERTA
+
+<div class="arrow">↓</div>
+
+📅 JADWAL
+
+<div class="arrow">↓</div>
+
+🏫 TEMPAT
+
+<div class="arrow">↓</div>
+
+💰 ANGGARAN
+
+<div class="arrow">↓</div>
+
+🎤 ACARA
+
+<div class="arrow">↓</div>
+
+📢 PUBLIKASI
+
+</div>
+
+<div class="challenge">
+
+<h3>
+🔥 CHALLENGE 1
+</h3>
+
+<p>
+Masalah:
+<strong>
+"SEORANG SISWA SERING TERLAMBAT."
+</strong>
+</p>
+
+<p>
+Pecah masalah tersebut menjadi
+minimal 4 bagian yang mungkin menyebabkan
+masalah.
+</p>
+
+<textarea id="decomp"
+placeholder="Contoh: waktu bangun, perjalanan, persiapan..."></textarea>
+
+<button class="blue" onclick="checkDecomp()">
+🧩 ANALISIS
+</button>
+
+<div id="decompResult" class="result">
+Belum dianalisis.
+</div>
+
+</div>
+
+</section>
+
+<!-- PATTERN -->
+
+<section class="card">
+
+<h2>
+🔎 LEVEL 2 — PATTERN RECOGNITION
+</h2>
+
+<p>
+Setelah masalah dipecah,
+kita mencari sesuatu yang berulang.
+</p>
+
+<div class="mission">
+
+<h2>
+2 → 4 → 8 → 16 → ?
+</h2>
+
+<p>
+Apa yang terjadi?
+</p>
+
+</div>
+
+<p>
+Setiap angka dikalikan 2.
+</p>
+
+<p>
+Dalam kehidupan nyata,
+pola tidak selalu berupa angka.
+</p>
+
+<div class="grid2">
+
+<div class="box">
+
+<h3>
+📚 SEKOLAH
+</h3>
+
+<p>
+Setiap Senin:
+siswa sering terlambat.
+</p>
+
+</div>
+
+<div class="box">
+
+<h3>
+🛒 BELANJA
+</h3>
+
+<p>
+Harga makanan naik
+setiap akhir pekan.
+</p>
+
+</div>
+
+<div class="box">
+
+<h3>
+🎮 GAME
+</h3>
+
+<p>
+Lawan menyerang
+dengan pola yang sama.
+</p>
+
+</div>
+
+<div class="box">
+
+<h3>
+📱 INTERNET
+</h3>
+
+<p>
+Judul berita menggunakan
+pola yang sama untuk menarik perhatian.
+</p>
+
+</div>
+
+</div>
+
+<div class="challenge">
+
+<h3>
+🔥 CHALLENGE 2
+</h3>
+
+<p>
+5 → 10 → 20 → 40 → ?
+</p>
+
+<select id="pattern">
+
+<option value="">
+Pilih jawaban
+</option>
+
+<option value="50">
+50
+</option>
+
+<option value="60">
+60
+</option>
+
+<option value="80">
+80
+</option>
+
+<option value="100">
+100
+</option>
+
+</select>
+
+<button class="blue" onclick="checkPattern()">
+🔎 CEK POLA
+</button>
+
+<div id="patternResult" class="result">
+Cari polanya.
+</div>
+
+</div>
+
+</section>
+
+<!-- ABSTRACTION -->
+
+<section class="card">
+
+<h2>
+🎯 LEVEL 3 — ABSTRACTION
+</h2>
+
+<p>
+Abstraction berarti menyederhanakan masalah
+dengan mengambil informasi yang paling relevan.
+</p>
+
+<div class="mission">
+
+<h3>
+KAMU INGIN MEMBELI SEPATU.
+</h3>
+
+<p>
+Data yang tersedia:
+</p>
+
+<p>
+Warna: Hitam</p>
+<p>
+Ukuran: 42</p>
+<p>
+Harga: Rp300.000</p>
+<p>
+Nama penjual: Andi</p>
+<p>
+Jumlah follower penjual: 2.000</p>
+<p>
+Rating: 4,9</p>
+
+</div>
+
+<p>
+Jika tujuanmu adalah memilih sepatu,
+informasi mana yang paling penting?
+</p>
+
+<div class="challenge">
+
+<select id="abstraction">
+
+<option value="">
+Pilih
+</option>
+
+<option value="warna">
+Warna
+</option>
+
+<option value="rating">
+Rating
+</option>
+
+<option value="jumlah">
+Jumlah follower
+</option>
+
+<option value="nama">
+Nama penjual
+</option>
+
+</select>
+
+<button class="blue" onclick="checkAbstraction()">
+🎯 ANALISIS
+</button>
+
+<div id="abstractionResult" class="result">
+Pilih informasi.
+</div>
+
+</div>
+
+<div class="info">
+
+<strong>
+Pertanyaan penting dalam abstraction:
+</strong>
+
+<br><br>
+
+"Informasi mana yang benar-benar dibutuhkan
+untuk menyelesaikan masalah?"
+
+</div>
+
+</section>
+
+<!-- ALGORITHM -->
+
+<section class="card">
+
+<h2>
+📋 LEVEL 4 — ALGORITHM
+</h2>
+
+<p>
+Algorithm adalah urutan langkah
+untuk menyelesaikan sebuah masalah.
+</p>
+
+<p>
+Algorithm tidak harus berupa kode.
+</p>
+
+<div class="mission">
+
+<h2>
+Contoh:
+</h2>
+
+<p>
+Kamu ingin membuat teh.
+</p>
+
+</div>
+
+<div class="flow">
+
+🔥 Panaskan air
+
+<div class="arrow">↓</div>
+
+☕ Siapkan gelas
+
+<div class="arrow">↓</div>
+
+🍵 Masukkan teh
+
+<div class="arrow">↓</div>
+
+💧 Tuangkan air
+
+<div class="arrow">↓</div>
+
+🍬 Tambahkan gula
+
+<div class="arrow">↓</div>
+
+🥄 Aduk
+
+</div>
+
+<div class="challenge">
+
+<h3>
+🔥 CHALLENGE 4
+</h3>
+
+<p>
+Mana langkah pertama ketika ingin
+mengirim email tugas kepada guru?
+</p>
+
+<select id="algorithm">
+
+<option value="">
+Pilih
+</option>
+
+<option value="kirim">
+Tekan kirim
+</option>
+
+<option value="isi">
+Menulis isi email
+</option>
+
+<option value="buka">
+Membuka email
+</option>
+
+<option value="lampiran">
+Memasukkan lampiran
+</option>
+
+</select>
+
+<button class="blue" onclick="checkAlgorithm()">
+📋 CEK ALGORITHM
+</button>
+
+<div id="algorithmResult" class="result">
+Susun logikanya.
+</div>
+
+</div>
+
+</section>
+
+<!-- BOOLEAN -->
+
+<section class="card">
+
+<h2>
+⚡ BONUS — BERPIKIR DENGAN KONDISI
+</h2>
+
+<p>
+Komputer sering bekerja menggunakan
+pertanyaan sederhana:
+</p>
+
+<div class="mission">
+
+<h2>
+YA atau TIDAK?
+</h2>
+
+</div>
+
+<p>
+Contoh:
+</p>
+
+<div class="flow">
+
+Apakah hujan?
+
+<br>
+
+↓ <br>
+
+YA → Bawa payung ☔
+
+<br>
+
+TIDAK → Tidak perlu payung
+
+</div>
+
+<p>
+Inilah dasar dari logika
+<strong>IF / ELSE</strong>.
+</p>
+
+<div class="challenge">
+
+<h3>
+🎯 SITUATION
+</h3>
+
+<p>
+Jika nilai siswa ≥ 75,
+maka siswa dinyatakan lulus.
+</p>
+
+<p>
+Nilai siswa = 80.
+</p>
+
+<select id="boolean">
+
+<option value="">
+Pilih
+</option>
+
+<option value="lulus">
+LULUS
+</option>
+
+<option value="tidak">
+TIDAK LULUS
+</option>
+
+</select>
+
+<button class="green" onclick="checkBoolean()">
+⚡ CEK LOGIKA
+</button>
+
+<div id="booleanResult" class="result">
+Apa keputusan sistem?
+</div>
+
+</div>
+
+</section>
+
+<!-- REAL WORLD -->
+
+<section class="card">
+
+<h2>
+🌎 COMPUTATIONAL THINKING DI DUNIA NYATA
+</h2>
+
+<p>
+Sekarang lihat bagaimana pola berpikir
+ini digunakan dalam kehidupan.
+</p>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>
+🍔 RESTORAN
+</h3>
+
+<p>
+Pesanan pelanggan dipecah,
+dikelompokkan, diproses,
+kemudian diberikan sesuai urutan.
+</p>
+
+<span class="badge">Decomposition</span> <span class="badge">Algorithm</span>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>
+🚗 GOOGLE MAPS
+</h3>
+
+<p>
+Sistem melihat banyak kemungkinan rute,
+kemudian memilih rute yang dianggap paling sesuai.
+</p>
+
+<span class="badge">Pattern</span> <span class="badge">Abstraction</span> <span class="badge">Algorithm</span>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>
+🎬 NETFLIX / YOUTUBE
+</h3>
+
+<p>
+Sistem melihat pola tontonan
+untuk memprediksi konten
+yang mungkin kamu sukai.
+</p>
+
+<span class="badge">Pattern</span>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>
+🏥 RUMAH SAKIT
+</h3>
+
+<p>
+Data pasien dipilah,
+informasi penting diambil,
+kemudian keputusan dibuat
+berdasarkan prosedur.
+</p>
+
+<span class="badge">Abstraction</span> <span class="badge">Algorithm</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- HUMAN VS COMPUTER -->
+
+<section class="card">
+
+<h2>
+🧠 MANUSIA VS KOMPUTER
+</h2>
+
+<div class="grid2">
+
+<div class="box">
+
+<h2>
+🧠 MANUSIA
+</h2>
+
+<p>
+Bisa memahami konteks.
+</p>
+
+<p>
+Bisa berimajinasi.
+</p>
+
+<p>
+Bisa mempertanyakan masalah.
+</p>
+
+<p>
+Bisa menentukan tujuan.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>
+💻 KOMPUTER
+</h2>
+
+<p>
+Sangat cepat.
+</p>
+
+<p>
+Tidak mudah lelah.
+</p>
+
+<p>
+Mampu mengulang instruksi.
+</p>
+
+<p>
+Memproses data dalam jumlah besar.
+</p>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<strong>
+Kesimpulan:
+</strong>
+
+<br><br>
+
+Komputer membutuhkan instruksi.
+Manusia menentukan masalah dan tujuan.
+
+</div>
+
+</section>
+
+<!-- ROBOT CONNECTION -->
+
+<section class="card">
+
+<h2>
+🤖 SEKARANG BARU KITA HUBUNGKAN DENGAN ROBOT
+</h2>
+
+<p>
+Robot hanyalah salah satu contoh
+penerapan Computational Thinking.
+</p>
+
+<div class="flow">
+
+🧩 Pecah masalah
+
+<div class="arrow">↓</div>
+
+🔎 Cari pola
+
+<div class="arrow">↓</div>
+
+🎯 Pilih informasi penting
+
+<div class="arrow">↓</div>
+
+📋 Buat algorithm
+
+<div class="arrow">↓</div>
+
+💻 Coding
+
+<div class="arrow">↓</div>
+
+🤖 Robot menjalankan instruksi
+
+</div>
+
+<div class="mission">
+
+<h3>
+CONTOH:
+</h3>
+
+<p>
+Robot harus mengikuti garis.
+</p>
+
+<p>
+Sensor membaca kondisi garis.
+</p>
+
+<p>
+Program mengambil keputusan.
+</p>
+
+<p>
+Motor bergerak sesuai keputusan.
+</p>
+
+<h2>
+📡 SENSOR → 🧠 LOGIKA → ⚙️ MOTOR
+</h2>
+
+</div>
+
+<p>
+Jadi sebelum siswa belajar membuat
+robot bergerak stabil,
+mereka harus memahami cara menyusun
+logikanya terlebih dahulu.
+</p>
+
+</section>
+
+<!-- DEBUGGING -->
+
+<section class="card">
+
+<h2>
+🐛 LEVEL 5 — DEBUGGING
+</h2>
+
+<p>
+Bagian penting dari Computational Thinking
+adalah memahami bahwa solusi pertama
+belum tentu benar.
+</p>
+
+<div class="danger">
+
+<h3>
+MASALAH:
+</h3>
+
+<p>
+Seorang siswa membuat jadwal belajar.
+</p>
+
+<p>
+Tetapi setiap kali mulai belajar,
+dia malah membuka media sosial.
+</p>
+
+</div>
+
+<h3>
+Apa yang salah?
+</h3>
+
+<div class="challenge">
+
+<select id="debug">
+
+<option value="">
+Pilih
+</option>
+
+<option value="meja">
+Mejanya kurang bagus
+</option>
+
+<option value="sistem">
+Strategi belajarnya perlu diperbaiki
+</option>
+
+<option value="warna">
+Warna buku kurang menarik
+</option>
+
+<option value="kursi">
+Kursinya salah
+</option>
+
+</select>
+
+<button class="orange" onclick="checkDebug()">
+🐛 DEBUG
+</button>
+
+<div id="debugResult" class="result">
+Cari sumber masalah.
+</div>
+
+</div>
+
+<div class="info">
+
+<strong>
+Debugging bukan berarti mencari siapa yang salah.
+</strong>
+
+<br><br>
+
+Debugging berarti mencari <strong>
+mengapa sistem tidak bekerja
+seperti yang diharapkan. </strong>
+
+</div>
+
+</section>
+
+<!-- BIG CHALLENGE -->
+
+<section class="card">
+
+<h2>
+🔥 BIG CHALLENGE — SOLVE THE SCHOOL
+</h2>
+
+<div class="mission">
+
+<h2>
+🏫 MASALAH SEKOLAH
+</h2>
+
+<p>
+Setiap pagi gerbang sekolah mengalami kemacetan.
+</p>
+
+<p>
+Ratusan siswa datang hampir bersamaan.
+</p>
+
+<p>
+Sebagian siswa berjalan kaki.
+Sebagian menggunakan motor.
+Sebagian diantar.
+</p>
+
+<h3>
+Tugasmu:
+</h3>
+
+<p>
+Gunakan Computational Thinking
+untuk mencari solusi.
+</p>
+
+</div>
+
+<h3>
+🧩 1. DECOMPOSITION
+</h3>
+
+<p>
+Pecah masalah kemacetan menjadi
+beberapa masalah kecil.
+</p>
+
+<textarea id="final1"
+placeholder="Tuliskan bagian-bagian masalah..."></textarea>
+
+<h3>
+🔎 2. PATTERN
+</h3>
+
+<p>
+Pola apa yang mungkin terjadi?
+</p>
+
+<textarea id="final2"
+placeholder="Contoh: jam tertentu paling padat..."></textarea>
+
+<h3>
+🎯 3. ABSTRACTION
+</h3>
+
+<p>
+Informasi apa yang paling penting
+untuk mencari solusi?
+</p>
+
+<textarea id="final3"
+placeholder="Tuliskan informasi penting..."></textarea>
+
+<h3>
+📋 4. ALGORITHM
+</h3>
+
+<p>
+Susun langkah solusi.
+</p>
+
+<textarea id="final4"
+placeholder="Tuliskan langkah solusi secara berurutan..."></textarea>
+
+<button class="green" onclick="finalChallenge()">
+🏆 SUBMIT SOLUTION
+</button>
+
+<div id="finalResult" class="result">
+Solusi belum dikirim.
+</div>
+
+</section>
+
+<!-- FINAL THINKING -->
+
+<section class="card">
+
+<h2>
+🧠 FINAL QUESTION
+</h2>
+
+<div class="mission">
+
+<h2>
+Jika komputer sangat cepat...
+</h2>
+
+<h2>
+Mengapa manusia masih diperlukan?
+</h2>
+
+</div>
+
+<div class="challenge">
+
+<textarea id="thinking"
+placeholder="Tuliskan pendapatmu..."></textarea>
+
+<button class="primary" onclick="finalThinking()">
+🧠 KIRIM PEMIKIRAN
+</button>
+
+<div id="thinkingResult" class="result">
+Tulis jawabanmu.
+</div>
+
+</div>
+
+</section>
+
+<!-- SCORE -->
+
+<section class="score">
+
+<h2>
+🏆 COMPUTATIONAL THINKING SCORE
+</h2>
+
+<div class="score-number">
+
+<span id="score">
+0
+</span>
+
+</div>
+
+<p>
+POINTS
+</p>
+
+<div class="progress">
+
+<div id="progress"
+class="progress-bar">
+</div>
+
+</div>
+
+<h2 id="rank">
+🌱 BEGINNER THINKER
+</h2>
+
+<p id="message">
+Mulai pecahkan masalahmu.
+</p>
+
+</section>
+
+<!-- SUMMARY -->
+
+<section class="card">
+
+<h2>
+🎓 WHAT DID YOU LEARN?
+</h2>
+
+<div class="grid">
+
+<div class="box">
+
+<div class="icon">
+🧩
+</div>
+
+<strong>
+DECOMPOSITION
+</strong>
+
+<p>
+Pecah masalah.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+🔎
+</div>
+
+<strong>
+PATTERN
+</strong>
+
+<p>
+Cari pola.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+🎯
+</div>
+
+<strong>
+ABSTRACTION
+</strong>
+
+<p>
+Ambil informasi penting.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">
+📋
+</div>
+
+<strong>
+ALGORITHM
+</strong>
+
+<p>
+Susun langkah.
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<div class="success">
+
+<h2>
+🔥 THINK LIKE A PROBLEM SOLVER
+</h2>
+
+<p>
+Kamu tidak harus langsung bisa coding.
+</p>
+
+<p>
+Kamu harus bisa melihat masalah,
+memecahnya,
+mencari pola,
+menentukan informasi penting,
+dan menyusun solusi.
+</p>
+
+<h2>
+🧠 THINK
+→
+🔎 ANALYZE
+→
+💡 SOLVE
+→
+📋 ALGORITHM
+→
+💻 CODE
+→
+🚀 CREATE
+</h2>
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+
+<a href="/" class="btn primary">
+🏠 KEMBALI KE SMAPRO INFORMATICS
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<strong>
+SMAPRO INFORMATICS LAB
+</strong>
+
+<br>
+
+Think • Solve • Create • Innovate
+
+</footer>
+
+<script>
+
+let score = 0;
+
+let completed = {};
+
+
+function addScore(points,name){
+
+    if(completed[name]){
+        return;
+    }
+
+    completed[name] = true;
+
+    score += points;
+
+    updateScore();
+
+}
+
+
+function updateScore(){
+
+    document.getElementById("score").innerText = score;
+
+    let percentage = Math.min(score,100);
+
+    document.getElementById("progress").style.width =
+        percentage + "%";
+
+
+    if(score >= 80){
+
+        document.getElementById("rank").innerHTML =
+            "🏆 COMPUTATIONAL THINKING MASTER";
+
+        document.getElementById("message").innerHTML =
+            "Luar biasa! Kamu mampu berpikir sistematis.";
+
+    }
+
+    else if(score >= 60){
+
+        document.getElementById("rank").innerHTML =
+            "🥇 PROBLEM SOLVER";
+
+        document.getElementById("message").innerHTML =
+            "Kamu mulai mampu melihat masalah dari berbagai sisi.";
+
+    }
+
+    else if(score >= 30){
+
+        document.getElementById("rank").innerHTML =
+            "🥈 THINKER";
+
+        document.getElementById("message").innerHTML =
+            "Cara berpikirmu mulai terstruktur.";
+
+    }
+
+    else{
+
+        document.getElementById("rank").innerHTML =
+            "🌱 BEGINNER THINKER";
+
+        document.getElementById("message").innerHTML =
+            "Terus berlatih memecahkan masalah.";
+
+    }
+
+}
+
+
+function checkDecomp(){
+
+    let answer =
+        document.getElementById("decomp").value;
+
+    let result =
+        document.getElementById("decompResult");
+
+
+    if(answer.length >= 30){
+
+        addScore(10,"decomp");
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎉 BAGUS! Kamu sudah mencoba memecah masalah menjadi bagian-bagian kecil.' +
+        '<br><br>⭐ +10 POINTS' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '💡 Coba cari minimal 4 kemungkinan penyebab.' +
+        '</div>';
+
+    }
+
+}
+
+
+function checkPattern(){
+
+    let answer =
+        document.getElementById("pattern").value;
+
+    let result =
+        document.getElementById("patternResult");
+
+
+    if(answer === "80"){
+
+        addScore(10,"pattern");
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎉 BENAR! Setiap angka dikalikan 2.' +
+        '<br><br>' +
+        '5 → 10 → 20 → 40 → 80' +
+        '<br><br>⭐ +10 POINTS' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '❌ Belum tepat. Perhatikan hubungan setiap angka.' +
+        '</div>';
+
+    }
+
+}
+
+
+function checkAbstraction(){
+
+    let answer =
+        document.getElementById("abstraction").value;
+
+    let result =
+        document.getElementById("abstractionResult");
+
+
+    if(answer === "rating"){
+
+        addScore(10,"abstraction");
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🎯 BENAR! Rating dapat menjadi informasi penting untuk menilai kualitas produk.' +
+        '<br><br>⭐ +10 POINTS' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '💡 Pikirkan informasi mana yang paling membantu dalam mengambil keputusan.' +
+        '</div>';
+
+    }
+
+}
+
+
+function checkAlgorithm(){
+
+    let answer =
+        document.getElementById("algorithm").value;
+
+    let result =
+        document.getElementById("algorithmResult");
+
+
+    if(answer === "buka"){
+
+        addScore(10,"algorithm");
+
+        result.innerHTML =
+        '<div class="success">' +
+        '📋 BENAR! Kita harus membuka email terlebih dahulu.' +
+        '<br><br>' +
+        'BUKA EMAIL → TULIS → LAMPIRKAN → KIRIM' +
+        '<br><br>⭐ +10 POINTS' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '💡 Algorithm harus dimulai dari langkah yang paling awal.' +
+        '</div>';
+
+    }
+
+}
+
+
+function checkBoolean(){
+
+    let answer =
+        document.getElementById("boolean").value;
+
+    let result =
+        document.getElementById("booleanResult");
+
+
+    if(answer === "lulus"){
+
+        addScore(10,"boolean");
+
+        result.innerHTML =
+        '<div class="success">' +
+        '⚡ BENAR! 80 ≥ 75, sehingga siswa LULUS.' +
+        '<br><br>⭐ +10 POINTS' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '💡 Bandingkan nilai 80 dengan batas kelulusan 75.' +
+        '</div>';
+
+    }
+
+}
+
+
+function checkDebug(){
+
+    let answer =
+        document.getElementById("debug").value;
+
+    let result =
+        document.getElementById("debugResult");
+
+
+    if(answer === "sistem"){
+
+        addScore(10,"debug");
+
+        result.innerHTML =
+        '<div class="success">' +
+        '🐛 BENAR! Kita harus mengevaluasi strategi dan sistem yang digunakan.' +
+        '<br><br>⭐ +10 POINTS' +
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+        '💡 Debugging berarti mencari penyebab sistem tidak bekerja sesuai tujuan.' +
+        '</div>';
+
+    }
+
+}
+
+
+function finalChallenge(){
+
+    let a =
+        document.getElementById("final1").value;
+
+    let b =
+        document.getElementById("final2").value;
+
+    let c =
+        document.getElementById("final3").value;
+
+    let d =
+        document.getElementById("final4").value;
+
+
+    let result =
+        document.getElementById("finalResult");
+
+
+    if(
+        a.length >= 30 &&
+        b.length >= 20 &&
+        c.length >= 20 &&
+        d.length >= 40
+    ){
+
+        addScore(30,"final");
+
+        result.innerHTML =
+        '<div class="success">' +
+
+        '🏆 FINAL MISSION BERHASIL!' +
+
+        '<br><br>' +
+
+        'Kamu telah menggunakan empat konsep utama:' +
+
+        '<br><br>' +
+
+        '🧩 Decomposition' +
+        '<br>' +
+
+        '🔎 Pattern Recognition' +
+        '<br>' +
+
+        '🎯 Abstraction' +
+        '<br>' +
+
+        '📋 Algorithm' +
+
+        '<br><br>' +
+
+        '⭐ +30 POINTS' +
+
+        '<br><br>' +
+
+        '🔥 Kamu berhasil berpikir seperti seorang problem solver!' +
+
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+
+        '💡 Jawaban masih terlalu singkat.' +
+
+        '<br><br>' +
+
+        'Coba jelaskan keempat tahap dengan lebih detail.' +
+
+        '</div>';
+
+    }
+
+}
+
+
+function finalThinking(){
+
+    let answer =
+        document.getElementById("thinking").value;
+
+    let result =
+        document.getElementById("thinkingResult");
+
+
+    if(answer.length >= 40){
+
+        addScore(10,"thinking");
+
+        result.innerHTML =
+        '<div class="success">' +
+
+        '🧠 JAWABAN DITERIMA!' +
+
+        '<br><br>' +
+
+        'Tidak ada satu jawaban mutlak.' +
+
+        '<br>' +
+
+        'Yang dinilai adalah bagaimana kamu menjelaskan alasanmu.' +
+
+        '<br><br>⭐ +10 POINTS' +
+
+        '</div>';
+
+    }
+
+    else{
+
+        result.innerHTML =
+        '<div class="warning">' +
+
+        '💡 Jelaskan pendapatmu dengan alasan yang lebih lengkap.' +
+
+        '</div>';
+
+    }
+
+}
+
+
+updateScore();
+
+</script>
+
+</body>
+
+</html>

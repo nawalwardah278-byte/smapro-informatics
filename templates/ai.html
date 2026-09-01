@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Artificial Intelligence - SMAPRO Informatics Lab</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        .ai-page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .ai-header {
+            background: #111827;
+            color: white;
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .ai-icon {
+            font-size: 65px;
+        }
+
+        .ai-header h2 {
+            margin: 15px 0 10px;
+        }
+
+        .ai-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .ai-card h2 {
+            margin-bottom: 15px;
+        }
+
+        .example {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .example strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .quiz-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .quiz-option {
+            width: 100%;
+            margin: 8px 0;
+            text-align: left;
+        }
+
+        .quiz-result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f1f5f9;
+            font-weight: bold;
+        }
+
+        .score {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .prompt-box {
+            margin-top: 20px;
+        }
+
+        .prompt-box textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .prompt-result {
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f1f5f9;
+        }
+
+        .challenge {
+            border-left: 6px solid #111827;
+        }
+
+        .challenge-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #111827;
+            font-weight: bold;
+        }
+
+        .home-button {
+            display: inline-block;
+            background: #111827;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+
+            .ai-page {
+                padding: 20px 12px;
+            }
+
+            .ai-card {
+                padding: 22px;
+            }
+
+            .quiz-option {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        🤖
+    </div>
+
+    <h1>
+        ARTIFICIAL INTELLIGENCE
+    </h1>
+
+    <p>
+        SMAPRO Informatics Lab
+    </p>
+
+</header>
+
+
+
+<main class="ai-page">
+
+
+    <a href="/" class="back-button">
+        ← Kembali ke Laboratorium
+    </a>
+
+
+
+    <!-- INTRO -->
+
+    <section class="ai-header">
+
+        <div class="ai-icon">
+            🤖
+        </div>
+
+        <h2>
+            Mengenal Artificial Intelligence
+        </h2>
+
+        <p>
+            Bagaimana komputer bisa belajar,
+            mengenali pola, dan membantu manusia?
+        </p>
+
+    </section>
+
+
+
+    <!-- MATERI 1 -->
+
+    <section class="ai-card">
+
+        <h2>
+            📖 1. Apa Itu Artificial Intelligence?
+        </h2>
+
+        <p>
+            Artificial Intelligence atau
+            <strong>AI</strong> adalah teknologi
+            yang memungkinkan komputer melakukan
+            tugas yang biasanya membutuhkan
+            kemampuan manusia.
+        </p>
+
+        <div class="example">
+
+            Contohnya:
+
+            <br><br>
+
+            🤖 Mengenali wajah
+
+            <br>
+
+            🎙️ Mengenali suara
+
+            <br>
+
+            📝 Memahami teks
+
+            <br>
+
+            📊 Menganalisis data
+
+            <br>
+
+            🎯 Membuat prediksi
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MATERI 2 -->
+
+    <section class="ai-card">
+
+        <h2>
+            🧠 2. Bagaimana AI Belajar?
+        </h2>
+
+        <p>
+            Salah satu pendekatan yang banyak
+            digunakan dalam AI adalah
+            <strong>Machine Learning</strong>.
+        </p>
+
+        <p>
+            Komputer dapat mempelajari pola
+            dari data dan menggunakan pola tersebut
+            untuk menghasilkan prediksi atau keputusan.
+        </p>
+
+        <div class="example">
+
+            Data
+
+            ↓
+
+            <br>
+
+            🤖 Model
+
+            ↓
+
+            <br>
+
+            Prediksi / Hasil
+
+        </div>
+
+    </section>
+
+
+
+    <!-- AI VS BUKAN AI -->
+
+    <section class="ai-card">
+
+        <h2>
+            🎯 3. AI atau Bukan AI?
+        </h2>
+
+        <p>
+            Pilih apakah teknologi berikut
+            menggunakan Artificial Intelligence.
+        </p>
+
+
+        <div class="quiz-box">
+
+            <h3>
+                Soal 1
+            </h3>
+
+            <p>
+                📱 Face Unlock pada smartphone
+            </p>
+
+            <button
+                class="quiz-option"
+                onclick="answerAI(true, this)">
+
+                🤖 Menggunakan AI
+
+            </button>
+
+            <button
+                class="quiz-option"
+                onclick="answerAI(false, this)">
+
+                ❌ Bukan AI
+
+            </button>
+
+            <div
+                class="quiz-result"
+                id="aiResult">
+
+                Pilih jawabanmu.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="quiz-box">
+
+            <h3>
+                Soal 2
+            </h3>
+
+            <p>
+                🧮 Kalkulator biasa
+            </p>
+
+            <button
+                class="quiz-option"
+                onclick="answerAI2(false, this)">
+
+                🤖 Menggunakan AI
+
+            </button>
+
+            <button
+                class="quiz-option"
+                onclick="answerAI2(true, this)">
+
+                ❌ Bukan AI
+
+            </button>
+
+            <div
+                class="quiz-result"
+                id="aiResult2">
+
+                Pilih jawabanmu.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="quiz-box">
+
+            <h3>
+                Soal 3
+            </h3>
+
+            <p>
+                🎬 Sistem rekomendasi film
+            </p>
+
+            <button
+                class="quiz-option"
+                onclick="answerAI3(true, this)">
+
+                🤖 Menggunakan AI
+
+            </button>
+
+            <button
+                class="quiz-option"
+                onclick="answerAI3(false, this)">
+
+                ❌ Bukan AI
+
+            </button>
+
+            <div
+                class="quiz-result"
+                id="aiResult3">
+
+                Pilih jawabanmu.
+
+            </div>
+
+        </div>
+
+
+        <div class="score" id="score">
+
+            ⭐ Skor: 0 / 3
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROMPT LAB -->
+
+    <section class="ai-card">
+
+        <h2>
+            ✍️ 4. Prompt Lab
+        </h2>
+
+        <p>
+            Salah satu keterampilan penting
+            dalam menggunakan AI adalah
+            memberikan instruksi atau
+            <strong>prompt</strong> yang jelas.
+        </p>
+
+
+        <div class="example">
+
+            <strong>
+                ❌ Prompt kurang jelas
+            </strong>
+
+            Buatkan tugas.
+
+        </div>
+
+
+        <div class="example">
+
+            <strong>
+                ✅ Prompt lebih jelas
+            </strong>
+
+            Buatkan 5 soal pilihan ganda
+            tentang Artificial Intelligence
+            untuk siswa kelas XII SMA,
+            lengkap dengan kunci jawaban.
+
+        </div>
+
+
+        <div class="prompt-box">
+
+            <p>
+                Coba tulis prompt versimu:
+            </p>
+
+            <textarea
+                id="promptInput"
+                placeholder="Tulis prompt di sini..."></textarea>
+
+            <br><br>
+
+            <button onclick="checkPrompt()">
+                🔍 Analisis Prompt
+            </button>
+
+            <div
+                class="prompt-result"
+                id="promptResult">
+
+                Hasil analisis akan muncul di sini.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ETIKA -->
+
+    <section class="ai-card">
+
+        <h2>
+            ⚖️ 5. Etika Menggunakan AI
+        </h2>
+
+        <p>
+            AI adalah alat yang sangat membantu,
+            tetapi pengguna tetap bertanggung jawab
+            terhadap hasil yang digunakan.
+        </p>
+
+        <div class="example">
+
+            ✅ Gunakan AI untuk belajar.
+
+            <br><br>
+
+            ✅ Periksa kembali informasi dari AI.
+
+            <br><br>
+
+            ✅ Gunakan AI untuk membantu
+            memahami materi.
+
+            <br><br>
+
+            ❌ Jangan langsung percaya semua
+            jawaban AI.
+
+            <br><br>
+
+            ❌ Jangan mengaku hasil AI sebagai
+            karya sendiri jika aturan tugas
+            melarangnya.
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TANTANGAN -->
+
+    <section class="ai-card challenge">
+
+        <h2>
+            🏆 6. Tantangan Praktik
+        </h2>
+
+        <div class="challenge-box">
+
+            <strong>
+                Tantangan 1 ⭐
+            </strong>
+
+            <p>
+                Temukan 5 contoh penggunaan AI
+                yang kamu temui dalam kehidupan
+                sehari-hari.
+            </p>
+
+        </div>
+
+
+        <div class="challenge-box">
+
+            <strong>
+                Tantangan 2 ⭐⭐
+            </strong>
+
+            <p>
+                Buat satu prompt AI untuk membantu
+                kamu mempelajari pelajaran yang
+                menurutmu sulit.
+            </p>
+
+        </div>
+
+
+        <div class="challenge-box">
+
+            <strong>
+                Tantangan 3 ⭐⭐⭐
+            </strong>
+
+            <p>
+                Bandingkan dua prompt:
+            </p>
+
+            <p>
+                "Jelaskan fotosintesis."
+            </p>
+
+            <p>
+                dengan:
+            </p>
+
+            <p>
+                "Jelaskan proses fotosintesis
+                untuk siswa SMA kelas XII dengan
+                bahasa sederhana dan berikan
+                contoh dalam kehidupan sehari-hari."
+            </p>
+
+            <p>
+                Jelaskan mengapa prompt kedua
+                lebih spesifik.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- REFLEKSI -->
+
+    <section class="ai-card">
+
+        <h2>
+            🧠 Pikirkan!
+        </h2>
+
+        <p>
+            Kalau AI belajar dari data,
+            apakah AI selalu menghasilkan
+            jawaban yang benar?
+        </p>
+
+        <p>
+            Menurutmu, siapa yang tetap harus
+            bertanggung jawab ketika seseorang
+            menggunakan hasil AI?
+        </p>
+
+    </section>
+
+
+
+    <!-- SELESAI -->
+
+    <section
+        class="ai-card"
+        style="text-align:center;">
+
+        <h2>
+            🎉 Selesai!
+        </h2>
+
+        <p>
+            Kamu sudah mempelajari dasar
+            Artificial Intelligence.
+        </p>
+
+        <a
+            href="/"
+            class="home-button">
+
+            🏠 Kembali ke SMAPRO Lab
+
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        SMAPRO INFORMATICS LAB
+    </p>
+
+    <p>
+        Learn • Explore • Create
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   SCORE
+========================= */
+
+let score = 0;
+
+let answered1 = false;
+let answered2 = false;
+let answered3 = false;
+
+
+
+/* =========================
+   SOAL 1
+========================= */
+
+function answerAI(correct, button) {
+
+    const result =
+        document.getElementById("aiResult");
+
+    if (answered1) return;
+
+    answered1 = true;
+
+    if (correct) {
+
+        score++;
+
+        result.innerHTML =
+            "✅ Benar! Face Unlock dapat menggunakan teknologi AI untuk mengenali pola wajah.";
+
+    } else {
+
+        result.innerHTML =
+            "❌ Belum tepat. Face Unlock modern dapat menggunakan AI untuk mengenali wajah.";
+
+    }
+
+    updateScore();
+
+}
+
+
+
+/* =========================
+   SOAL 2
+========================= */
+
+function answerAI2(correct, button) {
+
+    const result =
+        document.getElementById("aiResult2");
+
+    if (answered2) return;
+
+    answered2 = true;
+
+    if (correct) {
+
+        score++;
+
+        result.innerHTML =
+            "✅ Benar! Kalkulator biasa menjalankan operasi yang telah diprogram dan tidak membutuhkan AI.";
+
+    } else {
+
+        result.innerHTML =
+            "❌ Belum tepat. Kalkulator biasa bukan contoh AI.";
+
+    }
+
+    updateScore();
+
+}
+
+
+
+/* =========================
+   SOAL 3
+========================= */
+
+function answerAI3(correct, button) {
+
+    const result =
+        document.getElementById("aiResult3");
+
+    if (answered3) return;
+
+    answered3 = true;
+
+    if (correct) {
+
+        score++;
+
+        result.innerHTML =
+            "✅ Benar! Sistem rekomendasi dapat menggunakan AI dan machine learning untuk mempelajari pola preferensi pengguna.";
+
+    } else {
+
+        result.innerHTML =
+            "❌ Belum tepat. Sistem rekomendasi dapat menggunakan AI.";
+
+    }
+
+    updateScore();
+
+}
+
+
+
+/* =========================
+   UPDATE SCORE
+========================= */
+
+function updateScore() {
+
+    document.getElementById("score").innerHTML =
+        "⭐ Skor: " + score + " / 3";
+
+}
+
+
+
+/* =========================
+   PROMPT ANALYSIS
+========================= */
+
+function checkPrompt() {
+
+    const prompt =
+        document.getElementById("promptInput").value;
+
+    const result =
+        document.getElementById("promptResult");
+
+
+    if (prompt.trim() === "") {
+
+        result.innerHTML =
+            "⚠️ Tulis prompt terlebih dahulu.";
+
+        return;
+
+    }
+
+
+    let feedback = "";
+
+
+    if (prompt.length < 30) {
+
+        feedback +=
+            "⚠️ Prompt masih cukup singkat.<br><br>";
+
+    } else {
+
+        feedback +=
+            "✅ Prompt sudah cukup jelas.<br><br>";
+
+    }
+
+
+    if (
+        prompt.toLowerCase().includes("buat") ||
+        prompt.toLowerCase().includes("jelaskan") ||
+        prompt.toLowerCase().includes("analisis")
+    ) {
+
+        feedback +=
+            "✅ Kamu sudah menggunakan kata kerja yang menjelaskan tugas.<br><br>";
+
+    } else {
+
+        feedback +=
+            "💡 Coba gunakan kata kerja seperti: buat, jelaskan, bandingkan, analisis.<br><br>";
+
+    }
+
+
+    if (
+        prompt.toLowerCase().includes("siswa") ||
+        prompt.toLowerCase().includes("kelas") ||
+        prompt.toLowerCase().includes("untuk")
+    ) {
+
+        feedback +=
+            "✅ Kamu memberikan konteks kepada AI.";
+
+    } else {
+
+        feedback +=
+            "💡 Tambahkan konteks seperti siapa target pengguna atau untuk apa hasilnya.";
+
+    }
+
+
+    result.innerHTML = feedback;
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

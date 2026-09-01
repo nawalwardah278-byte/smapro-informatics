@@ -1,0 +1,1057 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Informatics Battle | SMAPRO</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f3f6fa;
+    color:#172033;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:7px 0 0;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:950px;
+    margin:auto;
+    padding:25px 15px;
+}
+
+
+/* ================= START CARD ================= */
+
+.start-card{
+    background:white;
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+.start-card h2{
+    margin-top:0;
+}
+
+.start-card p{
+    color:#64748b;
+}
+
+
+/* ================= INPUT ================= */
+
+input{
+    width:100%;
+    max-width:450px;
+    padding:13px;
+    border:2px solid #d1d5db;
+    border-radius:10px;
+    font-size:16px;
+    margin:8px 0;
+}
+
+
+/* ================= BUTTON ================= */
+
+button{
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px;
+    background:#111827;
+    color:white;
+    margin:5px;
+}
+
+button:hover{
+    transform:translateY(-1px);
+}
+
+.blue{
+    background:#2563eb;
+}
+
+.green{
+    background:#16a34a;
+}
+
+.gray{
+    background:#e5e7eb;
+    color:#111827;
+}
+
+
+/* ================= ROOM ================= */
+
+.room{
+    display:none;
+}
+
+.room-header{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.room-code{
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:4px;
+    margin:10px;
+}
+
+.share-box{
+    background:#eff6ff;
+    border-radius:12px;
+    padding:15px;
+    margin-top:15px;
+}
+
+.share-box input{
+    background:white;
+}
+
+
+/* ================= PLAYER ================= */
+
+.players{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.player{
+    background:white;
+    border-radius:15px;
+    padding:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+}
+
+.player-name{
+    font-weight:bold;
+}
+
+.player-car{
+    font-size:28px;
+    margin-top:7px;
+}
+
+
+/* ================= RACE ================= */
+
+.race{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.race h2{
+    margin-top:0;
+}
+
+.track{
+    position:relative;
+    height:80px;
+    background:#e5e7eb;
+    border-radius:12px;
+    margin:10px 0;
+    overflow:hidden;
+}
+
+.finish-line{
+    position:absolute;
+    right:0;
+    top:0;
+    width:8px;
+    height:100%;
+    background:#16a34a;
+}
+
+.car{
+    position:absolute;
+    left:5px;
+    top:20px;
+    font-size:35px;
+    transition:.5s;
+}
+
+
+/* ================= QUESTION ================= */
+
+.question-card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:20px;
+}
+
+.question-number{
+    color:#2563eb;
+    font-weight:bold;
+}
+
+.question{
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+}
+
+.answers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:20px;
+}
+
+.answer{
+    background:#f1f5f9;
+    color:#172033;
+    text-align:left;
+    border:2px solid #e2e8f0;
+}
+
+.answer:hover{
+    background:#e2e8f0;
+}
+
+
+/* ================= RESULT ================= */
+
+.result{
+    padding:15px;
+    border-radius:12px;
+    margin-top:15px;
+    display:none;
+}
+
+.correct{
+    background:#ecfdf5;
+    border-left:5px solid #16a34a;
+}
+
+.wrong{
+    background:#fff7ed;
+    border-left:5px solid #f97316;
+}
+
+
+/* ================= WINNER ================= */
+
+.winner{
+    display:none;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:35px;
+    border-radius:20px;
+}
+
+.winner h2{
+    font-size:30px;
+}
+
+.trophy{
+    font-size:55px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    header h1{
+        font-size:23px;
+    }
+
+    .answers{
+        grid-template-columns:1fr;
+    }
+
+    .start-card,
+    .question-card,
+    .race{
+        padding:20px;
+    }
+
+    .car{
+        font-size:30px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>⚡ INFORMATICS BATTLE</h1>
+
+<p>
+SMAPRO INFORMATICS • Think Fast • Solve Smart
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- ================================================= -->
+<!-- START -->
+<!-- ================================================= -->
+
+<section class="start-card" id="startScreen">
+
+<h2>🏁 SIAP UNTUK BATTLE?</h2>
+
+<p>
+Masukkan nama kamu untuk masuk ke arena.
+</p>
+
+<input
+    type="text"
+    id="playerName"
+    placeholder="Nama kamu..."
+>
+
+
+<br>
+
+
+<button class="blue" onclick="createBattle()">
+🎮 BUAT BATTLE
+</button>
+
+
+<button class="gray" onclick="joinBattle()">
+🔗 GABUNG BATTLE
+</button>
+
+
+<div id="joinArea" style="display:none;">
+
+<input
+    type="text"
+    id="roomInput"
+    placeholder="Masukkan kode battle..."
+>
+
+<br>
+
+<button class="green" onclick="enterBattle()">
+🚀 GABUNG
+</button>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- ROOM -->
+<!-- ================================================= -->
+
+<section class="room" id="roomScreen">
+
+
+<div class="room-header">
+
+<h2>🏁 BATTLE ROOM</h2>
+
+<p>
+Bagikan kode ini kepada temanmu.
+</p>
+
+<div class="room-code" id="roomCode">
+------
+</div>
+
+
+<button class="blue" onclick="shareBattle()">
+📤 BAGIKAN BATTLE
+</button>
+
+
+<div class="share-box">
+
+<input
+    id="shareLink"
+    readonly
+>
+
+</div>
+
+<p>
+👥 Temanmu bisa membuka link tersebut
+dan memasukkan kode battle.
+</p>
+
+<button class="green" onclick="startBattle()">
+🚀 MULAI BATTLE
+</button>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- PLAYERS -->
+<!-- ================================================= -->
+
+<div class="players" id="players">
+
+<div class="player">
+
+<div class="player-name">
+👤 Kamu
+</div>
+
+<div class="player-car">
+🚗
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- RACE -->
+<!-- ================================================= -->
+
+<div class="race">
+
+<h2>🏎️ RACE TRACK</h2>
+
+<p>
+Jawab pertanyaan dengan benar untuk membuat mobilmu maju!
+</p>
+
+
+<div class="track">
+
+<div
+    class="car"
+    id="raceCar"
+>
+🚗
+</div>
+
+<div class="finish-line"></div>
+
+</div>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- QUESTION -->
+<!-- ================================================= -->
+
+<div
+    class="question-card"
+    id="questionCard"
+    style="display:none;"
+>
+
+<div class="question-number">
+QUESTION <span id="questionNumber">1</span>
+</div>
+
+
+<div
+    class="question"
+    id="question"
+>
+Pertanyaan
+</div>
+
+
+<div
+    class="answers"
+    id="answers"
+>
+</div>
+
+
+<div
+    id="result"
+    class="result"
+>
+</div>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- WINNER -->
+<!-- ================================================= -->
+
+<div
+    class="winner"
+    id="winner"
+>
+
+<div class="trophy">
+🏆
+</div>
+
+<h2>FINISH!</h2>
+
+<p id="winnerText">
+Kamu berhasil menyelesaikan battle!
+</p>
+
+<button onclick="location.reload()">
+🔄 MAIN LAGI
+</button>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<script>
+
+/* ================================================= */
+/* BATTLE DATA */
+/* ================================================= */
+
+const questions = [
+
+{
+    question:
+    "Sebuah sekolah memiliki 1.000 data siswa. Kepala sekolah hanya ingin mengetahui siswa yang memiliki nilai di bawah KKM. Proses berpikir manakah yang paling tepat dilakukan terlebih dahulu?",
+
+    answers:[
+        "Menghapus data siswa lain",
+        "Memecah data berdasarkan kriteria yang dibutuhkan",
+        "Mengubah semua data menjadi gambar",
+        "Mencetak seluruh data"
+    ],
+
+    correct:1
+},
+
+{
+    question:
+    "Sebuah aplikasi terasa lambat. Setelah dianalisis, ternyata proses yang sama dilakukan berkali-kali. Konsep Computational Thinking apa yang paling membantu menemukan masalah tersebut?",
+
+    answers:[
+        "Pattern Recognition",
+        "Abstraction",
+        "Randomization",
+        "Encryption"
+    ],
+
+    correct:0
+},
+
+{
+    question:
+    "Kamu ingin membuat sistem yang menentukan apakah seseorang boleh masuk ruangan berdasarkan kartu akses. Informasi apa yang paling relevan?",
+
+    answers:[
+        "Warna pakaian",
+        "Nama panggilan",
+        "Status kartu akses",
+        "Merek sepatu"
+    ],
+
+    correct:2
+},
+
+{
+    question:
+    "Sebuah robot harus mengambil paket. Robot memiliki banyak sensor, tetapi hanya sensor jarak yang dibutuhkan untuk menentukan apakah ada benda di depannya. Proses memilih informasi penting tersebut disebut...",
+
+    answers:[
+        "Decomposition",
+        "Abstraction",
+        "Debugging",
+        "Iteration"
+    ],
+
+    correct:1
+},
+
+{
+    question:
+    "Sebuah algoritma memberikan hasil yang benar untuk 9 dari 10 kondisi, tetapi gagal pada kondisi tertentu. Apa langkah paling logis?",
+
+    answers:[
+        "Menghapus algoritma",
+        "Mencari kondisi yang menyebabkan kesalahan",
+        "Mengganti komputer",
+        "Menambah animasi"
+    ],
+
+    correct:1
+},
+
+{
+    question:
+    "Kamu menemukan bahwa setiap kali jumlah pengguna aplikasi meningkat, waktu respon juga meningkat. Kesimpulan awal yang paling tepat adalah...",
+
+    answers:[
+        "Tidak ada hubungan",
+        "Ada pola antara jumlah pengguna dan waktu respon",
+        "Komputer pasti rusak",
+        "Data harus dihapus"
+    ],
+
+    correct:1
+},
+
+{
+    question:
+    "Sebuah masalah terlalu kompleks untuk diselesaikan sekaligus. Strategi terbaik dalam Computational Thinking adalah...",
+
+    answers:[
+        "Mencoba semua kemungkinan secara acak",
+        "Memecah masalah menjadi bagian yang lebih kecil",
+        "Mengabaikan masalah",
+        "Menunggu komputer menyelesaikannya"
+    ],
+
+    correct:1
+},
+
+{
+    question:
+    "Dalam membuat sistem parkir otomatis, urutan yang paling logis adalah...",
+
+    answers:[
+        "Keputusan → Sensor → Output",
+        "Sensor → Proses → Keputusan → Output",
+        "Output → Sensor → Proses",
+        "Keputusan → Output → Sensor"
+    ],
+
+    correct:1
+}
+
+];
+
+
+/* ================================================= */
+/* VARIABLES */
+/* ================================================= */
+
+let currentQuestion = 0;
+
+let position = 0;
+
+let playerName = "";
+
+let roomCode = "";
+
+let battleStarted = false;
+
+
+/* ================================================= */
+/* CREATE BATTLE */
+/* ================================================= */
+
+function createBattle(){
+
+    playerName =
+        document.getElementById("playerName").value.trim();
+
+    if(playerName === ""){
+
+        alert("Masukkan nama terlebih dahulu!");
+
+        return;
+    }
+
+
+    roomCode =
+        Math.random()
+        .toString(36)
+        .substring(2,8)
+        .toUpperCase();
+
+
+    localStorage.setItem(
+        "smaproRoom",
+        roomCode
+    );
+
+
+    localStorage.setItem(
+        "smaproName",
+        playerName
+    );
+
+
+    openRoom();
+
+}
+
+
+/* ================================================= */
+/* JOIN */
+/* ================================================= */
+
+function joinBattle(){
+
+    document.getElementById("joinArea").style.display =
+        "block";
+
+}
+
+
+function enterBattle(){
+
+    playerName =
+        document.getElementById("playerName").value.trim();
+
+    roomCode =
+        document.getElementById("roomInput").value
+        .trim()
+        .toUpperCase();
+
+
+    if(playerName === ""){
+
+        alert("Masukkan nama terlebih dahulu!");
+
+        return;
+
+    }
+
+
+    if(roomCode === ""){
+
+        alert("Masukkan kode battle!");
+
+        return;
+
+    }
+
+
+    openRoom();
+
+}
+
+
+/* ================================================= */
+/* OPEN ROOM */
+/* ================================================= */
+
+function openRoom(){
+
+    document.getElementById("startScreen").style.display =
+        "none";
+
+    document.getElementById("roomScreen").style.display =
+        "block";
+
+
+    document.getElementById("roomCode").innerText =
+        roomCode;
+
+
+    document.getElementById("shareLink").value =
+        window.location.origin +
+        "/battle?room=" +
+        roomCode;
+
+}
+
+
+/* ================================================= */
+/* SHARE */
+/* ================================================= */
+
+function shareBattle(){
+
+    const link =
+        document.getElementById("shareLink").value;
+
+
+    if(navigator.share){
+
+        navigator.share({
+
+            title:"SMAPRO Informatics Battle",
+
+            text:
+            "Ayo ikut Informatics Battle SMAPRO!",
+
+            url:link
+
+        });
+
+    }
+
+    else{
+
+        navigator.clipboard.writeText(link);
+
+        alert(
+            "Link battle berhasil disalin!"
+        );
+
+    }
+
+}
+
+
+/* ================================================= */
+/* START */
+/* ================================================= */
+
+function startBattle(){
+
+    battleStarted = true;
+
+    document.getElementById("questionCard").style.display =
+        "block";
+
+
+    loadQuestion();
+
+}
+
+
+/* ================================================= */
+/* LOAD QUESTION */
+/* ================================================= */
+
+function loadQuestion(){
+
+    if(currentQuestion >= questions.length){
+
+        finishBattle();
+
+        return;
+
+    }
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById("questionNumber")
+        .innerText =
+        currentQuestion + 1;
+
+
+    document.getElementById("question")
+        .innerText =
+        q.question;
+
+
+    const answers =
+        document.getElementById("answers");
+
+
+    answers.innerHTML = "";
+
+
+    q.answers.forEach(
+        function(answer,index){
+
+            const button =
+                document.createElement("button");
+
+
+            button.className =
+                "answer";
+
+
+            button.innerText =
+                answer;
+
+
+            button.onclick =
+                function(){
+
+                    checkAnswer(index);
+
+                };
+
+
+            answers.appendChild(button);
+
+        }
+    );
+
+
+    document.getElementById("result").style.display =
+        "none";
+
+}
+
+
+/* ================================================= */
+/* CHECK ANSWER */
+/* ================================================= */
+
+function checkAnswer(index){
+
+    const q =
+        questions[currentQuestion];
+
+
+    const result =
+        document.getElementById("result");
+
+
+    const buttons =
+        document.querySelectorAll(".answer");
+
+
+    buttons.forEach(
+        function(button){
+
+            button.disabled = true;
+
+        }
+    );
+
+
+    if(index === q.correct){
+
+        position += 12;
+
+
+        if(position > 90){
+            position = 90;
+        }
+
+
+        document.getElementById("raceCar")
+            .style.left =
+            position + "%";
+
+
+        result.className =
+            "result correct";
+
+
+        result.innerHTML =
+            "✅ BENAR! Mobilmu maju <strong>12 meter</strong> 🚗💨";
+
+
+    }
+
+    else{
+
+        result.className =
+            "result wrong";
+
+
+        result.innerHTML =
+            "❌ SALAH! Mobilmu tidak bergerak. Coba lebih teliti!";
+
+    }
+
+
+    result.style.display =
+        "block";
+
+
+    setTimeout(
+        function(){
+
+            currentQuestion++;
+
+            loadQuestion();
+
+        },
+        1200
+    );
+
+}
+
+
+/* ================================================= */
+/* FINISH */
+/* ================================================= */
+
+function finishBattle(){
+
+    document.getElementById("questionCard")
+        .style.display =
+        "none";
+
+
+    document.getElementById("winner")
+        .style.display =
+        "block";
+
+
+    document.getElementById("winnerText")
+        .innerHTML =
+        "🎉 " +
+        playerName +
+        ", kamu berhasil menyelesaikan semua pertanyaan!";
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>

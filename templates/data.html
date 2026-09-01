@@ -1,0 +1,1058 @@
+'''text'
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Data Analysis Lab - SMAPRO</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        .data-page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .data-header {
+            background: #111827;
+            color: white;
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .data-icon {
+            font-size: 65px;
+        }
+
+        .data-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .example {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .data-input {
+            width: 100%;
+            max-width: 600px;
+            padding: 15px;
+            font-size: 17px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 13px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        .result {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .challenge {
+            border-left: 6px solid #111827;
+        }
+
+        .challenge-box {
+            background: #f1f5f9;
+            padding: 22px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .challenge-answer {
+            width: 100%;
+            max-width: 500px;
+            padding: 13px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            background: white;
+            line-height: 1.6;
+        }
+
+        .score-box {
+            text-align: center;
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .progress-box {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #111827;
+            font-weight: bold;
+        }
+
+        .home-button {
+            display: inline-block;
+            background: #111827;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        @media (max-width: 600px) {
+
+            .data-page {
+                padding: 20px 12px;
+            }
+
+            .data-card {
+                padding: 22px;
+            }
+
+            button {
+                width: 100%;
+                margin: 6px 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        📊
+    </div>
+
+    <h1>
+        DATA ANALYSIS
+    </h1>
+
+    <p>
+        SMAPRO Informatics Lab
+    </p>
+
+</header>
+
+
+
+<main class="data-page">
+
+
+    <a href="/" class="back-button">
+        ← Kembali ke Laboratorium
+    </a>
+
+
+
+    <!-- HEADER -->
+
+    <section class="data-header">
+
+        <div class="data-icon">
+            📊
+        </div>
+
+        <h2>
+            DATA ANALYSIS LAB
+        </h2>
+
+        <p>
+            Belajar membaca, mengolah,
+            dan memahami data.
+        </p>
+
+    </section>
+
+
+
+    <!-- MATERI -->
+
+    <section class="data-card">
+
+        <h2>
+            📖 1. Apa Itu Data Analysis?
+        </h2>
+
+        <p>
+            Data analysis adalah proses
+            mengolah dan memahami data
+            untuk mendapatkan informasi
+            yang berguna.
+        </p>
+
+        <div class="example">
+
+            📥 Data
+
+            <br>
+
+            ↓
+
+            <br>
+
+            🔧 Pengolahan
+
+            <br>
+
+            ↓
+
+            <br>
+
+            📊 Analisis
+
+            <br>
+
+            ↓
+
+            <br>
+
+            💡 Kesimpulan
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTOH -->
+
+    <section class="data-card">
+
+        <h2>
+            📚 2. Contoh Data Nilai
+        </h2>
+
+        <p>
+            Perhatikan data berikut:
+        </p>
+
+        <div class="example">
+
+            Andi = 80
+
+            <br>
+
+            Budi = 75
+
+            <br>
+
+            Citra = 90
+
+            <br>
+
+            Deni = 85
+
+            <br>
+
+            Eka = 70
+
+        </div>
+
+        <p>
+            Dari data tersebut kita dapat
+            menemukan beberapa informasi.
+        </p>
+
+    </section>
+
+
+
+    <!-- SIMULATOR -->
+
+    <section class="data-card">
+
+        <h2>
+            🧪 3. DATA ANALYSIS LAB
+        </h2>
+
+        <p>
+            Masukkan beberapa angka.
+            Pisahkan setiap angka dengan koma.
+        </p>
+
+        <div class="example">
+
+            Contoh:
+
+            <br>
+
+            <strong>
+                80,75,90,85,70
+            </strong>
+
+        </div>
+
+        <input
+            class="data-input"
+            id="dataInput"
+            type="text"
+            placeholder="80,75,90,85,70">
+
+        <br>
+
+        <button onclick="analyzeNumbers()">
+
+            📊 ANALISIS DATA
+
+        </button>
+
+        <div
+            class="result"
+            id="dataResult">
+
+            Hasil analisis akan muncul di sini.
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EXPLANATION -->
+
+    <section class="data-card">
+
+        <h2>
+            🧠 4. Apa yang Kita Dapatkan?
+        </h2>
+
+        <p>
+            Ketika kita menganalisis data,
+            kita dapat menemukan:
+        </p>
+
+        <div class="example">
+
+            🔢 Jumlah data
+
+            <br>
+
+            ➕
+
+            Total
+
+            <br>
+
+            📊 Rata-rata
+
+            <br>
+
+            ⬆️ Nilai tertinggi
+
+            <br>
+
+            ⬇️ Nilai terendah
+
+        </div>
+
+        <p>
+            Informasi tersebut dapat membantu
+            kita memahami suatu keadaan
+            berdasarkan data.
+        </p>
+
+    </section>
+
+
+
+    <!-- CHALLENGES -->
+
+    <section class="data-card challenge">
+
+        <h2>
+            🏆 5. DATA CHALLENGE
+        </h2>
+
+        <p>
+            Kerjakan tantangan berikut.
+            Sistem akan memeriksa jawabanmu.
+        </p>
+
+
+
+        <!-- CHALLENGE 1 -->
+
+        <div class="challenge-box">
+
+            <h3>
+                ⭐ Tantangan 1 — Rata-rata
+            </h3>
+
+            <p>
+                Perhatikan data:
+            </p>
+
+            <div class="example">
+
+                60, 70, 80, 90, 100
+
+            </div>
+
+            <p>
+                Berapakah rata-ratanya?
+            </p>
+
+            <input
+                class="challenge-answer"
+                id="answer1"
+                type="number"
+                placeholder="Masukkan jawaban">
+
+            <button onclick="checkChallenge1()">
+
+                ✅ CEK JAWABAN
+
+            </button>
+
+            <div
+                class="feedback"
+                id="feedback1">
+
+                Jawaban belum diperiksa.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CHALLENGE 2 -->
+
+        <div class="challenge-box">
+
+            <h3>
+                ⭐⭐ Tantangan 2 — Nilai Tertinggi
+            </h3>
+
+            <p>
+                Perhatikan data:
+            </p>
+
+            <div class="example">
+
+                55, 72, 91, 68, 84
+
+            </div>
+
+            <p>
+                Berapakah nilai tertingginya?
+            </p>
+
+            <input
+                class="challenge-answer"
+                id="answer2"
+                type="number"
+                placeholder="Masukkan jawaban">
+
+            <button onclick="checkChallenge2()">
+
+                ✅ CEK JAWABAN
+
+            </button>
+
+            <div
+                class="feedback"
+                id="feedback2">
+
+                Jawaban belum diperiksa.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CHALLENGE 3 -->
+
+        <div class="challenge-box">
+
+            <h3>
+                ⭐⭐ Tantangan 3 — Nilai Terendah
+            </h3>
+
+            <p>
+                Perhatikan data:
+            </p>
+
+            <div class="example">
+
+                45, 80, 65, 90, 70
+
+            </div>
+
+            <p>
+                Berapakah nilai terendahnya?
+            </p>
+
+            <input
+                class="challenge-answer"
+                id="answer3"
+                type="number"
+                placeholder="Masukkan jawaban">
+
+            <button onclick="checkChallenge3()">
+
+                ✅ CEK JAWABAN
+
+            </button>
+
+            <div
+                class="feedback"
+                id="feedback3">
+
+                Jawaban belum diperiksa.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CHALLENGE 4 -->
+
+        <div class="challenge-box">
+
+            <h3>
+                ⭐⭐⭐ Tantangan 4 — Analisis
+            </h3>
+
+            <p>
+                Perhatikan data berikut:
+            </p>
+
+            <div class="example">
+
+                50, 55, 60, 90, 95
+
+            </div>
+
+            <p>
+                Menurutmu, apakah data tersebut
+                menunjukkan bahwa semua nilai
+                siswa tinggi?
+            </p>
+
+            <textarea
+                id="answer4"
+                placeholder="Tuliskan alasanmu di sini..."></textarea>
+
+            <br><br>
+
+            <button onclick="checkChallenge4()">
+
+                🧠 KIRIM JAWABAN
+
+            </button>
+
+            <div
+                class="feedback"
+                id="feedback4">
+
+                Jawaban belum diperiksa.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCORE -->
+
+        <div class="score-box"
+             id="scoreBox">
+
+            🏆 Skor: 0 / 40
+
+        </div>
+
+        <div class="progress-box"
+             id="progressBox">
+
+            Progress: 0 / 4 tantangan
+
+        </div>
+
+    </section>
+
+
+
+    <!-- REFLECTION -->
+
+    <section class="data-card">
+
+        <h2>
+            🤔 6. Pikirkan!
+        </h2>
+
+        <p>
+            Bayangkan dua kelas memiliki
+            rata-rata nilai yang sama.
+        </p>
+
+        <p>
+            Apakah berarti semua siswa
+            di kedua kelas memiliki kemampuan
+            yang sama?
+        </p>
+
+        <p>
+            Jelaskan menurut pendapatmu.
+        </p>
+
+    </section>
+
+
+
+    <!-- FINISH -->
+
+    <section
+        class="data-card"
+        style="text-align:center;">
+
+        <h2>
+            🎉 Selesai!
+        </h2>
+
+        <p>
+            Kamu sudah belajar membaca
+            dan menganalisis data.
+        </p>
+
+        <a
+            href="/"
+            class="home-button">
+
+            🏠 Kembali ke SMAPRO Lab
+
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        SMAPRO INFORMATICS LAB
+    </p>
+
+    <p>
+        Learn • Explore • Create
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* ===================================
+   DATA ANALYSIS
+=================================== */
+
+function analyzeNumbers() {
+
+    const input =
+        document.getElementById("dataInput").value;
+
+    const result =
+        document.getElementById("dataResult");
+
+
+    if (input.trim() === "") {
+
+        result.innerHTML =
+            "⚠️ Masukkan data terlebih dahulu.";
+
+        return;
+
+    }
+
+
+    const numbers =
+        input
+        .split(",")
+        .map(Number)
+        .filter(n => !isNaN(n));
+
+
+    if (numbers.length === 0) {
+
+        result.innerHTML =
+            "⚠️ Data tidak valid.";
+
+        return;
+
+    }
+
+
+    const total =
+        numbers.reduce(
+            (sum, number) =>
+            sum + number,
+            0
+        );
+
+
+    const average =
+        total / numbers.length;
+
+
+    const highest =
+        Math.max(...numbers);
+
+
+    const lowest =
+        Math.min(...numbers);
+
+
+    result.innerHTML =
+
+        "📊 HASIL ANALISIS" +
+
+        "<br><br>" +
+
+        "Jumlah data : " +
+        numbers.length +
+
+        "<br>" +
+
+        "Total : " +
+        total +
+
+        "<br>" +
+
+        "Rata-rata : " +
+        average.toFixed(2) +
+
+        "<br>" +
+
+        "Nilai tertinggi : " +
+        highest +
+
+        "<br>" +
+
+        "Nilai terendah : " +
+        lowest;
+
+}
+
+
+
+/* ===================================
+   SCORE
+=================================== */
+
+let score = 0;
+
+let completed1 = false;
+let completed2 = false;
+let completed3 = false;
+let completed4 = false;
+
+
+
+function updateScore() {
+
+    document.getElementById("scoreBox").innerHTML =
+        "🏆 Skor: " + score + " / 40";
+
+
+    let completed = 0;
+
+
+    if (completed1) completed++;
+
+    if (completed2) completed++;
+
+    if (completed3) completed++;
+
+    if (completed4) completed++;
+
+
+    document.getElementById("progressBox").innerHTML =
+
+        "Progress: " +
+        completed +
+        " / 4 tantangan";
+
+}
+
+
+
+/* ===================================
+   CHALLENGE 1
+=================================== */
+
+function checkChallenge1() {
+
+    if (completed1) return;
+
+
+    const answer =
+        Number(
+            document.getElementById("answer1").value
+        );
+
+
+    const feedback =
+        document.getElementById("feedback1");
+
+
+    if (answer === 80) {
+
+        score += 10;
+
+        completed1 = true;
+
+
+        feedback.innerHTML =
+            "🎉 <strong>BENAR!</strong><br>" +
+            "Rata-rata = 80.<br>" +
+            "Kamu mendapatkan ⭐ 10 poin.";
+
+    } else {
+
+        feedback.innerHTML =
+            "❌ Belum tepat.<br>" +
+            "Petunjuk: jumlahkan semua data " +
+            "kemudian bagi dengan jumlah datanya.";
+
+    }
+
+
+    updateScore();
+
+}
+
+
+
+/* ===================================
+   CHALLENGE 2
+=================================== */
+
+function checkChallenge2() {
+
+    if (completed2) return;
+
+
+    const answer =
+        Number(
+            document.getElementById("answer2").value
+        );
+
+
+    const feedback =
+        document.getElementById("feedback2");
+
+
+    if (answer === 91) {
+
+        score += 10;
+
+        completed2 = true;
+
+
+        feedback.innerHTML =
+            "🎉 <strong>BENAR!</strong><br>" +
+            "Nilai tertinggi adalah 91.<br>" +
+            "Kamu mendapatkan ⭐ 10 poin.";
+
+    } else {
+
+        feedback.innerHTML =
+            "❌ Belum tepat.<br>" +
+            "Petunjuk: cari angka yang paling besar.";
+
+    }
+
+
+    updateScore();
+
+}
+
+
+
+/* ===================================
+   CHALLENGE 3
+=================================== */
+
+function checkChallenge3() {
+
+    if (completed3) return;
+
+
+    const answer =
+        Number(
+            document.getElementById("answer3").value
+        );
+
+
+    const feedback =
+        document.getElementById("feedback3");
+
+
+    if (answer === 45) {
+
+        score += 10;
+
+        completed3 = true;
+
+
+        feedback.innerHTML =
+            "🎉 <strong>BENAR!</strong><br>" +
+            "Nilai terendah adalah 45.<br>" +
+            "Kamu mendapatkan ⭐ 10 poin.";
+
+    } else {
+
+        feedback.innerHTML =
+            "❌ Belum tepat.<br>" +
+            "Petunjuk: cari angka yang paling kecil.";
+
+    }
+
+
+    updateScore();
+
+}
+
+
+
+/* ===================================
+   CHALLENGE 4
+=================================== */
+
+function checkChallenge4() {
+
+    if (completed4) return;
+
+
+    const answer =
+        document.getElementById("answer4").value
+        .trim()
+        .toLowerCase();
+
+
+    const feedback =
+        document.getElementById("feedback4");
+
+
+    if (answer.length < 15) {
+
+        feedback.innerHTML =
+            "⚠️ Jawabanmu masih terlalu singkat. " +
+            "Coba jelaskan alasanmu.";
+
+        return;
+
+    }
+
+
+    if (
+        answer.includes("tidak") ||
+        answer.includes("beda") ||
+        answer.includes("berbeda") ||
+        answer.includes("rendah") ||
+        answer.includes("tinggi")
+    ) {
+
+        score += 10;
+
+        completed4 = true;
+
+
+        feedback.innerHTML =
+            "🎉 <strong>JAWABAN DITERIMA!</strong><br>" +
+            "Kamu sudah mencoba menganalisis pola data.<br>" +
+            "Tidak semua nilai pada data tersebut tinggi.<br>" +
+            "Kamu mendapatkan ⭐ 10 poin.";
+
+    } else {
+
+        feedback.innerHTML =
+            "💡 Coba perhatikan kembali data " +
+            "50, 55, 60, 90, 95.<br>" +
+            "Apakah semua angka berada pada " +
+            "tingkat yang tinggi?";
+
+    }
+
+
+    updateScore();
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
