@@ -1,297 +1,352 @@
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<meta charset="UTF-8">
+    <title>SMAPRO Informatics Lab</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<title>SMAPRO Informatics Lab</title>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f6;
+            color: #1f2937;
+        }
 
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}">
-```
+        header {
+            background: linear-gradient(135deg, #0f172a, #14532d);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
 
+        .logo {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .welcome {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .welcome h2 {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .welcome p {
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 20px 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 20px 0 30px;
+            font-size: 25px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 28px 22px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.6;
+            min-height: 75px;
+            margin-bottom: 20px;
+        }
+
+        .card a,
+        .battle a {
+            text-decoration: none;
+        }
+
+        button {
+            border: none;
+            background: #166534;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #14532d;
+            transform: scale(1.03);
+        }
+
+        .battle {
+            margin-top: 50px;
+            background: linear-gradient(135deg, #111827, #14532d);
+            color: white;
+            border-radius: 22px;
+            padding: 40px 25px;
+            text-align: center;
+        }
+
+        .battle-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .battle h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .battle p {
+            margin-bottom: 22px;
+            opacity: 0.9;
+        }
+
+        .battle button {
+            background: white;
+            color: #14532d;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            line-height: 1.8;
+        }
+
+        footer p:last-child {
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            .welcome h2 {
+                font-size: 23px;
+            }
+
+            .card {
+                padding: 24px 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================================================= -->
-
-<!-- HEADER -->
-
-<!-- ================================================= -->
-
 <header>
+    <div class="logo">🧠</div>
 
-```
-<div class="logo">
-    🧠
-</div>
+    <h1>SMAPRO INFORMATICS LAB</h1>
 
-<h1>
-    SMAPRO INFORMATICS LAB
-</h1>
-
-<p>
-    Laboratorium Pembelajaran Informatika
-</p>
-```
-
+    <p>Laboratorium Pembelajaran Informatika</p>
 </header>
 
-<!-- ================================================= -->
-
-<!-- WELCOME -->
-
-<!-- ================================================= -->
 
 <section class="welcome">
 
-```
-<h2>
-    Selamat Datang 👋
-</h2>
+    <h2>Selamat Datang 👋</h2>
 
-<p>
-    Belajar Informatika dengan cara
-    yang interaktif, menyenangkan,
-    dan menantang.
-</p>
-```
+    <p>
+        Belajar Informatika dengan cara yang interaktif,
+        menyenangkan, dan menantang.
+    </p>
 
 </section>
 
-<!-- ================================================= -->
-
-<!-- MAIN -->
-
-<!-- ================================================= -->
 
 <main>
 
-```
-<h2 class="section-title">
-    📚 PILIH MATERI
-</h2>
+    <h2 class="section-title">
+        📚 PILIH MATERI
+    </h2>
 
 
-
-<div class="menu-grid">
-
+    <div class="menu-grid">
 
 
-    <!-- ================================================= -->
-    <!-- ARTIFICIAL INTELLIGENCE -->
-    <!-- ================================================= -->
+        <!-- AI -->
 
-    <div class="card">
+        <div class="card">
 
-        <div class="icon">
-            🤖
+            <div class="icon">🤖</div>
+
+            <h3>Artificial Intelligence</h3>
+
+            <p>
+                Mengenal kecerdasan buatan,
+                manfaat, cara kerja, dan etika penggunaan AI.
+            </p>
+
+            <a href="ai.html">
+                <button>MULAI BELAJAR</button>
+            </a>
+
         </div>
 
-        <h3>
-            Artificial Intelligence
-        </h3>
 
-        <p>
-            Mengenal kecerdasan buatan,
-            manfaat, cara kerja,
-            dan etika penggunaan AI.
-        </p>
+        <!-- DATA -->
 
-        <a href="/ai">
-            <button>
-                MULAI BELAJAR
-            </button>
-        </a>
+        <div class="card">
+
+            <div class="icon">📊</div>
+
+            <h3>Data Analysis</h3>
+
+            <p>
+                Belajar membaca, mengolah,
+                dan menganalisis data untuk menemukan informasi.
+            </p>
+
+            <a href="data.html">
+                <button>MULAI BELAJAR</button>
+            </a>
+
+        </div>
+
+
+        <!-- REPRESENTASI -->
+
+        <div class="card">
+
+            <div class="icon">🔢</div>
+
+            <h3>Representasi Data</h3>
+
+            <p>
+                Mengenal bagaimana komputer menyimpan,
+                membaca, dan merepresentasikan data.
+            </p>
+
+            <a href="representasi.html">
+                <button>MULAI BELAJAR</button>
+            </a>
+
+        </div>
+
+
+        <!-- COMPUTATIONAL -->
+
+        <div class="card">
+
+            <div class="icon">🧩</div>
+
+            <h3>Computational Thinking</h3>
+
+            <p>
+                Melatih cara berpikir sistematis,
+                logis, kritis, dan kreatif.
+            </p>
+
+            <a href="computational.html">
+                <button>MULAI BELAJAR</button>
+            </a>
+
+        </div>
+
+
+        <!-- CYBER -->
+
+        <div class="card">
+
+            <div class="icon">🔐</div>
+
+            <h3>Cyber Security</h3>
+
+            <p>
+                Belajar menjaga keamanan akun,
+                data pribadi, perangkat, dan aktivitas digital.
+            </p>
+
+            <a href="cyber.html">
+                <button>MULAI BELAJAR</button>
+            </a>
+
+        </div>
+
+
+        <!-- PROGRAMMING -->
+
+        <div class="card">
+
+            <div class="icon">💻</div>
+
+            <h3>Programming</h3>
+
+            <p>
+                Belajar membuat program menggunakan
+                logika dan bahasa pemrograman.
+            </p>
+
+            <a href="programming.html">
+                <button>MULAI BELAJAR</button>
+            </a>
+
+        </div>
+
 
     </div>
 
 
+    <!-- BATTLE -->
 
-    <!-- ================================================= -->
-    <!-- DATA ANALYSIS -->
-    <!-- ================================================= -->
-
-    <div class="card">
-
-        <div class="icon">
-            📊
-        </div>
-
-        <h3>
-            Data Analysis
-        </h3>
-
-        <p>
-            Belajar membaca, mengolah,
-            dan menganalisis data
-            untuk menemukan informasi.
-        </p>
-
-        <a href="/data">
-            <button>
-                MULAI BELAJAR
-            </button>
-        </a>
-
-    </div>
-
-
-
-    <!-- ================================================= -->
-    <!-- REPRESENTASI DATA -->
-    <!-- ================================================= -->
-
-    <div class="card">
-
-        <div class="icon">
-            🔢
-        </div>
-
-        <h3>
-            Representasi Data
-        </h3>
-
-        <p>
-            Mengenal bagaimana komputer
-            menyimpan, membaca,
-            dan merepresentasikan data.
-        </p>
-
-        <a href="/representasi">
-            <button>
-                MULAI BELAJAR
-            </button>
-        </a>
-
-    </div>
-
-
-
-    <!-- ================================================= -->
-    <!-- COMPUTATIONAL THINKING -->
-    <!-- ================================================= -->
-
-    <div class="card">
-
-        <div class="icon">
-            🧩
-        </div>
-
-        <h3>
-            Computational Thinking
-        </h3>
-
-        <p>
-            Melatih cara berpikir sistematis,
-            logis, kritis, dan kreatif
-            untuk menyelesaikan masalah.
-        </p>
-
-        <a href="/computational">
-            <button>
-                MULAI BELAJAR
-            </button>
-        </a>
-
-    </div>
-
-
-
-    <!-- ================================================= -->
-    <!-- CYBER SECURITY -->
-    <!-- ================================================= -->
-
-    <div class="card">
-
-        <div class="icon">
-            🔐
-        </div>
-
-        <h3>
-            Cyber Security
-        </h3>
-
-        <p>
-            Belajar menjaga keamanan akun,
-            data pribadi, perangkat,
-            dan aktivitas di dunia digital.
-        </p>
-
-        <a href="/cyber">
-            <button>
-                MULAI BELAJAR
-            </button>
-        </a>
-
-    </div>
-
-
-
-    <!-- ================================================= -->
-    <!-- PROGRAMMING -->
-    <!-- ================================================= -->
-
-    <div class="card">
-
-        <div class="icon">
-            💻
-        </div>
-
-        <h3>
-            Programming
-        </h3>
-
-        <p>
-            Belajar membuat program
-            menggunakan logika
-            dan bahasa pemrograman.
-        </p>
-
-        <a href="/programming">
-            <button>
-                MULAI BELAJAR
-            </button>
-        </a>
-
-    </div>
-
-
-
-</div>
-
-
-
-<!-- ================================================= -->
-<!-- INFORMATICS BATTLE -->
-<!-- ================================================= -->
-
-<section class="battle">
-
-    <div class="battle-icon">
-        🎮
     <section class="battle">
 
-    <div class="battle-icon">
-        🎮
-    </div>
-
-    <h2>
-    <!-- INFORMATICS BATTLE -->
-
-<section class="battle">
-
-    <div class="battle-icon">
-        🎮
-    </div>
-
-    <div class="battle-content">
+        <div class="battle-icon">
+            🎮
+        </div>
 
         <h2>
             INFORMATICS BATTLE
@@ -302,39 +357,29 @@
             Informatika yang cepat dan seru!
         </p>
 
-        <a href="/battle">
+        <a href="battle.html">
             <button>
                 ⚡ MULAI BATTLE
             </button>
         </a>
 
-    </div>
+    </section>
 
-</section>
-```
 
 </main>
 
-<!-- ================================================= -->
-
-<!-- FOOTER -->
-
-<!-- ================================================= -->
 
 <footer>
 
-```
-<p>
-    SMAPRO INFORMATICS LAB
-</p>
+    <p>
+        SMAPRO INFORMATICS LAB
+    </p>
 
-<p>
-    Learn • Explore • Create
-</p>
-```
+    <p>
+        Learn • Explore • Create
+    </p>
 
 </footer>
 
 </body>
-
 </html>
